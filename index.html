@@ -3,82 +3,169 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Tienda Oficial de Astral SMP</title>
+<title>Astral SMP - Tienda Oficial</title>
 <style>
-body{background:#0a0614;color:white;font-family:sans-serif;text-align:center;padding:20px}
-h1{color:#a855f7;font-size:30px;margin:25px 0;text-shadow:0 0 15px #a855f7}
-.card{background:#1a1033;border:1px solid #a855f7;border-radius:15px;padding:15px;margin:15px auto;max-width:360px;text-align:left}
-.price{font-size:21px;font-weight:bold;text-align:center;margin:10px 0}
-.btn{display:block;color:white;text-align:center;padding:12px;border-radius:10px;text-decoration:none;font-weight:bold;margin-top:10px}
-.unban-section{max-width:750px;margin:50px auto 20px;background:linear-gradient(180deg,rgba(249,115,22,0.12),rgba(6,182,212,0.12));border:2px solid #f97316;border-radius:20px;padding:20px 10px}
-.unban-card{background:#1a1033;border:1px solid #f97316;border-radius:15px;padding:15px;margin:12px auto;max-width:360px;text-align:left}
-.pagos{max-width:500px;margin:40px auto;background:#1a1033;border:1px solid #a855f7;border-radius:15px;padding:20px}
+*{margin:0;padding:0;box-sizing:border-box}
+body{background:#0f0a1e;color:white;font-family:sans-serif;padding:15px}
+h1{text-align:center;font-size:26px;margin:15px 0 5px;font-weight:900}
+.sub{text-align:center;color:#9ca3af;font-size:13px;margin-bottom:15px}
+.warn{max-width:600px;margin:0 auto 12px;background:linear-gradient(90deg,rgba(239,68,68,0.2),rgba(249,115,22,0.2));border:1px solid #ef4444;border-radius:12px;padding:10px;text-align:center;font-size:12px;color:#fecaca}
+.notice{max-width:500px;margin:0 auto 15px;background:#1a1033;border:1px solid #a855f7;border-radius:30px;padding:10px 15px;text-align:center;font-size:13px;color:#d1c7ff}
+.ip-box{max-width:500px;margin:0 auto 20px;background:#1a1033;border:1px solid #2d1b4e;border-radius:15px;padding:12px;display:flex;flex-direction:column;gap:8px}
+.ip-row{display:flex;justify-content:space-between;align-items:center;background:#0f0a1e;padding:10px 12px;border-radius:10px;border:1px solid #2d1b4e}
+.ip-label{font-size:11px;color:#9ca3af}
+.ip-value{font-weight:900;font-family:monospace;font-size:14px;color:#5eead4}
+.btn-copy{background:#a855f7;color:white;border:none;padding:6px 12px;border-radius:8px;font-size:11px;font-weight:700;cursor:pointer}
+.tabs{max-width:400px;margin:0 auto 20px;display:flex;background:#1a1033;border-radius:30px;padding:5px;border:1px solid #2d1b4e}
+.tab-btn{flex:1;padding:12px;border-radius:25px;border:none;background:transparent;color:#9ca3af;font-weight:700;cursor:pointer}
+.tab-btn.active{background:#a855f7;color:white}
+.grid{display:none;max-width:1200px;margin:0 auto;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:15px}
+.grid.active{display:grid}
+.card{background:linear-gradient(180deg,#1e1438,#130e26);border:1px solid #2d1b4e;border-radius:20px;overflow:hidden;position:relative}
+.img-top{height:130px;background:radial-gradient(ellipse at center,#1a1033,#0a0614);display:flex;align-items:center;justify-content:center;margin:12px;border-radius:15px}
+.icon{font-size:65px}
+.card-body{padding:15px}
+.kit-title{font-size:22px;font-weight:900;text-align:center;font-family:monospace;letter-spacing:2px}
+.kit-name{color:#5eead4;font-weight:700;font-size:14px;margin:5px 0}
+.price{font-size:30px;font-weight:900;margin:8px 0}
+.price span{font-size:12px;color:#9ca3af;font-weight:400}
+.list{margin:12px 0;border-top:1px solid #2d1b4e}
+.list-item{padding:9px 0;border-bottom:1px solid #1f1838;font-size:12px;color:#d1c7ff;display:flex;gap:8px}
+.btn-main{width:100%;padding:13px;background:#a855f7;color:white;border:none;border-radius:12px;font-weight:900;margin-top:10px;display:block;text-align:center;text-decoration:none}
 </style>
 </head>
 <body>
-<h1>TIENDA OFICIAL<br>DE ASTRAL SMP</h1>
-<p style="color:#c4b5fd">Kits exclusivos - Entrega instantanea</p>
 
-<div class="card" style="border-color:gold">
-<b>👑 KIT PERSONALIZADO - 25 USD</b><br><br>🎁 Kit unico<br>✨ proteccion ?<br>⚔️ filo ?<br>🍎 64 manzanas + 16 totems<br>💰 50M
-<div class="price" style="color:gold">25 USD</div>
-<a class="btn" style="background:gold;color:black" href="https://discord.gg/Py2YZaG8sW">COMPRAR AHORA</a>
+<h1>Elige tu próxima aventura</h1>
+<p class="sub">Tienda Oficial de Astral SMP</p>
+
+<div class="warn">⚠️ <b>ADVERTENCIA:</b> Los rangos solo se hacen con <b>jereklein</b>. No pagues a nadie más. Contacto oficial: Discord.</div>
+
+<div class="ip-box">
+<div style="text-align:center;font-size:12px;font-weight:700;color:#a855f7;margin-bottom:5px">🌐 IP OFICIAL DEL SERVIDOR</div>
+<div class="ip-row">
+<div><div class="ip-label">IP</div><div class="ip-value" id="ip">AstralSMP.aternos.me</div></div>
+<button class="btn-copy" onclick="copiar('ip')">📋 Copiar IP</button>
+</div>
+<div class="ip-row">
+<div><div class="ip-label">PUERTO</div><div class="ip-value" id="puerto">25565</div></div>
+<button class="btn-copy" onclick="copiar('puerto')">📋 Copiar Puerto</button>
+</div>
 </div>
 
+<div class="notice">⏳ Los rangos duran un máximo de <b>2 temporadas.</b></div>
+
+<div class="tabs">
+<button class="tab-btn active" onclick="showTab('rangos',this)">👑 Rangos</button>
+<button class="tab-btn" onclick="showTab('unban',this)">⚖️ Unban</button>
+</div>
+
+<div id="rangos" class="grid active">
 <div class="card">
-<b>💀 KIT ANCESTRAL - 14 USD</b><br><br>⏱️ cada 24h<br>✨ proteccion 18<br>⚔️ filo 18<br>💰 20M cada 24h
-<div class="price" style="color:#ef4444">14 USD</div>
-<a class="btn" style="background:#dc2626" href="https://discord.gg/Py2YZaG8sW">COMPRAR AHORA</a>
+<div class="img-top"><div class="icon" style="filter:drop-shadow(0 0 20px gold)">👑</div></div>
+<div class="card-body">
+<div class="kit-title" style="color:gold">PERSONALIZADO</div>
+<div class="kit-name">Kit Personalizado</div>
+<div class="price">$25.00 <span>USD</span></div>
+<div class="list">
+<div class="list-item">🏷️ Rango en el servidor</div>
+<div class="list-item">🛡️ Armor Protección ?</div>
+<div class="list-item">⚔️ Afilado ?</div>
+<div class="list-item">📦 Kit único</div>
+<div class="list-item">💰 50M</div>
+<div class="list-item">⏳ Duración: máximo 2 temporadas</div>
 </div>
-
+<a class="btn-main" href="https://discord.gg/Py2YZaG8sW">Añadir al carrito +</a>
+</div>
+</div>
 <div class="card">
-<b>🔮 KIT MISTICO - 8 USD</b><br><br>⏱️ cada 24h<br>✨ proteccion 16<br>⚔️ filo 16<br>💰 15M cada 24h
-<div class="price" style="color:#a78bfa">8 USD</div>
-<a class="btn" style="background:#7c3aed" href="https://discord.gg/Py2YZaG8sW">COMPRAR AHORA</a>
+<div class="img-top"><div class="icon" style="filter:drop-shadow(0 0 20px #ef4444)">💀</div></div>
+<div class="card-body">
+<div class="kit-title" style="color:#ef4444">ANCESTRAL</div>
+<div class="kit-name">Kit Ancestral</div>
+<div class="price">$14.00 <span>USD</span></div>
+<div class="list">
+<div class="list-item">🏷️ Rango en el servidor</div>
+<div class="list-item">🛡️ Armor Protección 18</div>
+<div class="list-item">⚔️ Afilado 18</div>
+<div class="list-item">📦 Kit cada 1 día</div>
+<div class="list-item">💰 20M cada 1 día</div>
+<div class="list-item">⏳ Duración: máximo 2 temporadas</div>
 </div>
-
+<a class="btn-main" href="https://discord.gg/Py2YZaG8sW">Añadir al carrito +</a>
+</div>
+</div>
 <div class="card">
-<b>🐍 KIT MEDUSA - 4 USD</b><br><br>⏱️ cada 24h<br>✨ proteccion 14<br>⚔️ filo 14<br>💰 10M cada 24h
-<div class="price" style="color:#34d399">4 USD</div>
-<a class="btn" style="background:#059669" href="https://discord.gg/Py2YZaG8sW">COMPRAR AHORA</a>
+<div class="img-top"><div class="icon" style="filter:drop-shadow(0 0 20px #a855f7)">🔮</div></div>
+<div class="card-body">
+<div class="kit-title" style="color:#a78bfa">MISTICO</div>
+<div class="kit-name">Kit Místico</div>
+<div class="price">$8.00 <span>USD</span></div>
+<div class="list">
+<div class="list-item">🏷️ Rango en el servidor</div>
+<div class="list-item">🛡️ Armor Protección 16</div>
+<div class="list-item">⚔️ Afilado 16</div>
+<div class="list-item">📦 Kit cada 1 día</div>
+<div class="list-item">💰 15M cada 1 día</div>
+<div class="list-item">⏳ Duración: máximo 2 temporadas</div>
+</div>
+<a class="btn-main" href="https://discord.gg/Py2YZaG8sW">Añadir al carrito +</a>
+</div>
+</div>
+<div class="card">
+<div class="img-top"><div class="icon" style="filter:drop-shadow(0 0 20px #10b981)">🐍</div></div>
+<div class="card-body">
+<div class="kit-title" style="color:#34d399">MEDUSA</div>
+<div class="kit-name">Kit Medusa</div>
+<div class="price">$4.00 <span>USD</span></div>
+<div class="list">
+<div class="list-item">🏷️ Rango en el servidor</div>
+<div class="list-item">🛡️ Armor Protección 14</div>
+<div class="list-item">⚔️ Afilado 14</div>
+<div class="list-item">📦 Kit cada 1 día</div>
+<div class="list-item">💰 10M cada 1 día</div>
+<div class="list-item">⏳ Duración: máximo 2 temporadas</div>
+</div>
+<a class="btn-main" href="https://discord.gg/Py2YZaG8sW">Añadir al carrito +</a>
+</div>
+</div>
 </div>
 
-<div class="unban-section">
-<h2 style="color:#fb923c;font-size:24px;margin-bottom:5px">🔓 APARTADO DE UNBANS</h2>
-<p style="color:#fed7aa;font-size:12px;margin-bottom:15px">¿Fuiste baneado? Recupera tu acceso</p>
-
-<div class="unban-card">
-<b style="color:#fb923c">⏳ UNBAN TEMPORAL - 1 MES</b><br><br>
-⏳ Desbaneo por <b>30 dias</b><br>
-🎮 Vuelve a jugar 1 mes completo<br>
-⚠️ Si te banean de nuevo, se acaba<br>
-⏱️ Entrega en menos de 1 hora<br>
-💲 Mas barato para probar
-<div class="price" style="color:#fb923c">4 USD</div>
-<a class="btn" style="background:#ea580c" href="https://discord.gg/Py2YZaG8sW">COMPRAR UNBAN 1 MES</a>
+<div id="unban" class="grid">
+<div class="card">
+<div class="img-top"><div class="icon" style="filter:drop-shadow(0 0 20px #22c55e)">🔓</div></div>
+<div class="card-body">
+<div class="kit-title" style="color:#22c55e">UNBAN 30 DIAS</div>
+<div class="kit-name">Unban Temporal</div>
+<div class="price">$2.00 <span>USD</span></div>
+<div class="list"><div class="list-item">✅ Desbaneo por 30 días</div><div class="list-item">🎮 Vuelve a jugar</div></div>
+<a class="btn-main" style="background:#22c55e" href="https://discord.gg/Py2YZaG8sW">Añadir al carrito +</a>
+</div>
+</div>
+<div class="card">
+<div class="img-top"><div class="icon" style="filter:drop-shadow(0 0 20px #06b6d4)">♾️</div></div>
+<div class="card-body">
+<div class="kit-title" style="color:#06b6d4">PERMANENTE</div>
+<div class="kit-name">Unban Permanente</div>
+<div class="price">$6.00 <span>USD</span></div>
+<div class="list"><div class="list-item">♾️ Desbaneo para siempre</div><div class="list-item">🎮 Nunca más pagas</div></div>
+<a class="btn-main" style="background:#06b6d4" href="https://discord.gg/Py2YZaG8sW">Añadir al carrito +</a>
+</div>
+</div>
 </div>
 
-<div class="unban-card" style="border-color:#06b6d4">
-<b style="color:#06b6d4">♾️ UNBAN PERMANENTE</b><br><br>
-♾️ Desbaneo <b>para siempre</b><br>
-🎮 Nunca mas pagas por este ban<br>
-🛡️ Set Diamante Prot 14 de regalo<br>
-💰 5M para volver a empezar<br>
-⏱️ Entrega inmediata<br>
-🔥 La opcion mas comprada
-<div class="price" style="color:#06b6d4">9 USD</div>
-<a class="btn" style="background:#0891b2" href="https://discord.gg/Py2YZaG8sW">COMPRAR UNBAN PERMANENTE</a>
-</div>
-
-</div>
-
-<div class="pagos">
-<h3 style="color:#c084fc">💜 METODOS DE PAGO</h3><br>
-💙 Mercado Pago<br>🏦 Transferencia<br>💵 PayPal<br>🎮 Discord: discord.gg/Py2YZaG8sW<br><br>
-⚠️ Para unbans mandar nick + comprobante
-<br><br>
-<a href="https://discord.gg/Py2YZaG8sW" style="display:inline-block;padding:10px 20px;background:#5865F2;color:white;border-radius:8px;text-decoration:none;font-weight:bold">DISCORD OFICIAL</a>
-</div>
-
+<script>
+function showTab(name,btn){
+document.querySelectorAll('.grid').forEach(g=>g.classList.remove('active'));
+document.querySelectorAll('.tab-btn').forEach(b=>b.classList.remove('active'));
+document.getElementById(name).classList.add('active');
+btn.classList.add('active');
+}
+function copiar(id){
+var txt=document.getElementById(id).innerText;
+navigator.clipboard.writeText(txt);
+alert('Copiado: '+txt);
+}
+</script>
 </body>
 </html>
