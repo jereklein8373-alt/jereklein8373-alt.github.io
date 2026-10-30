@@ -3,110 +3,93 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Astral SMP</title>
+<title>Astral SMP - Tienda Oficial</title>
 <style>
 *{margin:0;padding:0;box-sizing:border-box}
-body{background:#0a0814;color:white;font-family:sans-serif;padding:12px}
-.header{text-align:center;margin:20px 0 10px}
-.header h1{font-size:40px;font-weight:900;color:#c084fc;letter-spacing:5px;text-shadow:0 0 20px #7c3aed}
-.warn{max-width:750px;margin:0 auto 15px;background:#450a0a;border:2px solid #ef4444;border-radius:10px;padding:12px;text-align:center;font-size:13px;font-weight:800;color:#fecaca}
-.shop-box{max-width:800px;margin:0 auto;background:#151223;border:1px solid #2a2450;border-radius:16px;overflow:hidden}
-.shop-head{padding:18px;background:#0f0d1a;border-bottom:1px solid #2a2450;display:flex;justify-content:space-between;align-items:center}
-.shop-head h2{font-size:20px;font-weight:900;letter-spacing:2px}
-.shop-sub{padding:10px 18px;color:#9ca3af;font-size:12px;background:#151223;border-bottom:1px solid #1e1840}
-.kit-row{display:flex;align-items:center;gap:16px;padding:18px;background:#1a182b;border-bottom:1px solid #1e1840;transition:0.15s}
-.kit-row:hover{background:#201e36}
-.kit-icon{width:68px;height:68px;background:#0f0d1a;border:2px solid var(--accent,#2a2450);border-radius:12px;display:flex;align-items:center;justify-content:center;font-size:34px;flex-shrink:0}
-.kit-info{flex:1;min-width:0}
-.kit-name{font-size:18px;font-weight:900;letter-spacing:1px}
-.kit-desc{font-size:12px;color:#9ca3af;margin-top:3px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
-.kit-price{font-size:18px;font-weight:900;color:#fbbf24;white-space:nowrap;margin-right:10px}
-.kit-actions{display:flex;gap:8px;flex-shrink:0}
-.btn{padding:10px 16px;border-radius:10px;font-weight:800;font-size:12px;border:none;cursor:pointer;text-decoration:none;text-align:center}
-.btn-view{background:#2a2450;color:#a78bfa;border:1px solid #4c1d95}
-.btn-buy{background:var(--accent,#a855f7);color:white}
-.btn-buy.boost{background:#ff41ff}
-.btn-buy.gold{background:gold;color:black}
-.ip-footer{max-width:800px;margin:20px auto;background:#151223;border:1px solid #2a2450;border-radius:14px;padding:16px;text-align:center}
-.ip-line{display:flex;justify-content:space-between;align-items:center;background:#0a0814;padding:14px;border-radius:10px;margin-top:8px;border:1px solid #2a2450}
-.ip-text{font-family:monospace;font-weight:700;font-size:14px}
-.btn-copy{background:#7c3aed;border:none;color:white;padding:7px 12px;border-radius:8px;font-weight:700;font-size:11px;cursor:pointer}
-
-/* MODAL */
+body{background:#0b0614;color:white;font-family:sans-serif;padding:12px}
+.top-badge{text-align:center;margin:20px 0 5px}
+.top-badge span{background:rgba(168,85,247,0.15);border:1px solid #a855f7;color:#c084fc;font-size:10px;letter-spacing:2px;font-weight:800;padding:6px 14px;border-radius:20px}
+.header{text-align:center;margin:10px 0 15px}
+.header h1{font-size:38px;font-weight:900;letter-spacing:5px;color:#d8b4fe;text-shadow:0 0 20px #7c3aed}
+.tabs{max-width:800px;margin:15px auto;display:flex;gap:10px}
+.tab-btn{flex:1;padding:14px;border-radius:14px;border:1px solid #2a2450;background:#151223;color:#9ca3af;font-weight:800;cursor:pointer}
+.tab-btn.active{background:linear-gradient(90deg,#a855f7,#7c3aed);color:white;box-shadow:0 0 20px rgba(168,85,247,0.4);border-color:#a855f7}
+.grid{display:none;max-width:1100px;margin:0 auto;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:16px}
+.grid.active{display:grid}
+.card{background:linear-gradient(180deg,#1a1033,#130c25);border:1px solid #2a1f4a;border-radius:22px;padding:14px}
+.card-top{height:120px;background:radial-gradient(circle at center,#2a1a5a 0%,#130c25 70%);border-radius:16px;display:flex;align-items:center;justify-content:center;border:1px solid #1f1840}
+.card-icon{font-size:60px;filter:drop-shadow(0 0 15px var(--accent))}
+.card-name{font-size:24px;font-weight:900;text-align:center;margin:14px 0 2px;letter-spacing:2px;color:var(--accent)}
+.card-sub{color:#5eead4;font-size:14px;font-weight:700;margin-left:2px;text-align:center}
+.card-price{font-size:30px;font-weight:900;margin:6px 0 10px;text-align:left}
+.card-price small{font-size:11px;color:#6b7280}
+.list{list-style:none}
+.list li{padding:9px 2px;border-bottom:1px solid #1e1840;font-size:13px;color:#cbd5e1;display:flex;gap:8px}
+.btn-main{width:100%;background:linear-gradient(90deg,#a855f7,#7c3aed);color:white;border:none;padding:13px;border-radius:12px;font-weight:900;font-size:13px;margin-top:12px;cursor:pointer;display:block;text-align:center;text-decoration:none}
+.btn-sec{width:100%;background:transparent;border:1px solid #3a2a6a;color:#a78bfa;padding:11px;border-radius:12px;font-weight:700;font-size:12px;margin-top:8px;cursor:pointer}
+.ip-box{max-width:800px;margin:25px auto 10px;background:#151223;border:1px solid #2a2450;border-radius:14px;padding:16px;text-align:center}
+.ip-line{display:flex;justify-content:space-between;align-items:center;background:#0b0614;padding:12px;border-radius:10px;margin-top:8px;border:1px solid #2a2450}
+.warn{max-width:800px;margin:15px auto;background:#2a0a0a;border:1px solid #7f1d1d;border-radius:12px;padding:14px;text-align:center;color:#fecaca;font-size:13px;font-weight:600}
 .modal{display:none;position:fixed;inset:0;background:rgba(0,0,0,0.85);z-index:999;align-items:center;justify-content:center;padding:20px}
 .modal.active{display:flex}
-.modal-box{background:#151223;border:2px solid var(--accent,#a855f7);border-radius:18px;padding:22px;max-width:400px;width:100%;text-align:center}
-.modal-icon{font-size:60px;margin-bottom:8px}
-.modal-list{text-align:left;margin:15px 0;background:#0a0814;border-radius:10px;padding:12px}
-.modal-item{padding:7px 0;border-bottom:1px solid #1e1840;font-size:13px;color:#d1c7ff}
+.modal-box{background:#1a1033;border:2px solid var(--accent,#a855f7);border-radius:18px;padding:20px;max-width:380px;width:100%;text-align:center}
 </style>
 </head>
 <body>
 
-<div class="header"><h1>ASTRAL SMP</h1><p style="color:#6b7280;font-size:10px;letter-spacing:3px">TEMPORADA 3</p></div>
+<div class="top-badge"><span>✦ TIENDA OFICIAL DE ASTRAL SMP ✦</span></div>
+<div class="header"><h1>ASTRAL SMP</h1><p style="color:#6b7280;font-size:11px;letter-spacing:3px">TEMPORADA 3</p></div>
 
-<div class="warn">⛔ ADVERTENCIA: Los rangos solo se hacen con <b>jereklein</b>. No pagues a nadie más.</div>
-
-<div class="shop-box">
-<div class="shop-head"><h2>⚔️ KIT SHOP</h2><span style="font-size:11px;color:#9ca3af">Rangos Astral • 2 temporadas</span></div>
-<div class="shop-sub">Elegí un kit para comprar • Entrega instantánea en el juego</div>
-<div id="kits"></div>
-<div style="padding:12px;text-align:center;font-size:11px;color:#6b7280;background:#0f0d1a">Usa /kit &lt;nombre&gt; para canjear • Kits cada 24h</div>
+<div class="tabs">
+<button class="tab-btn active" onclick="showTab('rangos',this)">RANGOS</button>
+<button class="tab-btn" onclick="showTab('unbans',this)">UNBANS</button>
 </div>
 
-<div class="ip-footer">
+<div id="rangos" class="grid active">
+
+<div class="card" style="--accent:gold"><div class="card-top"><div class="card-icon">👑</div></div><div class="card-name">PERSONALIZADO</div><div class="card-sub">Kit Personalizado</div><div class="card-price">$25 <small>USD</small></div><ul class="list"><li>🏷️ Rango en el servidor</li><li>🛡️ Armadura a elección</li><li>⚔️ Afilado a elección</li><li>📦 Kit único personalizado</li><li>⏳ Máximo 2 temporadas</li></ul><a class="btn-main" style="background:gold;color:black" href="https://discord.gg/Py2YZaG8sW" target="_blank">Añadir al carrito +</a><button class="btn-sec" onclick="openModal(0)">Ver detalles +</button></div>
+
+<div class="card" style="--accent:#ef4444"><div class="card-top"><div class="card-icon">💀</div></div><div class="card-name">ANCESTRAL</div><div class="card-sub">Kit Ancestral</div><div class="card-price">$14 <small>USD</small></div><ul class="list"><li>🏷️ Rango en el servidor</li><li>🛡️ Armor Protección 18</li><li>⚔️ Afilado 18</li><li>📦 Kit cada 1 día</li><li>💰 20M cada 1 día</li><li>⏳ Máximo 2 temporadas</li></ul><a class="btn-main" href="https://discord.gg/Py2YZaG8sW" target="_blank">Añadir al carrito +</a><button class="btn-sec" onclick="openModal(1)">Ver detalles +</button></div>
+
+<div class="card" style="--accent:#a855f7"><div class="card-top"><div class="card-icon">🔮</div></div><div class="card-name">MISTICO</div><div class="card-sub">Kit Místico</div><div class="card-price">$8 <small>USD</small></div><ul class="list"><li>🏷️ Rango en el servidor</li><li>🛡️ Armor Protección 16</li><li>⚔️ Afilado 16</li><li>📦 Kit cada 1 día</li><li>💰 15M cada 1 día</li><li>⏳ Máximo 2 temporadas</li></ul><a class="btn-main" href="https://discord.gg/Py2YZaG8sW" target="_blank">Añadir al carrito +</a><button class="btn-sec" onclick="openModal(2)">Ver detalles +</button></div>
+
+<div class="card" style="--accent:#10b981"><div class="card-top"><div class="card-icon">🐍</div></div><div class="card-name">MEDUSA</div><div class="card-sub">Kit Medusa</div><div class="card-price">$4 <small>USD</small></div><ul class="list"><li>🏷️ Rango en el servidor</li><li>🛡️ Armor Protección 14</li><li>⚔️ Afilado 14</li><li>📦 Kit cada 1 día</li><li>💰 10M cada 1 día</li><li>⏳ Máximo 2 temporadas</li></ul><a class="btn-main" href="https://discord.gg/Py2YZaG8sW" target="_blank">Añadir al carrito +</a><button class="btn-sec" onclick="openModal(3)">Ver detalles +</button></div>
+
+<div class="card" style="--accent:#ff41ff"><div class="card-top"><div class="card-icon">🚀</div></div><div class="card-name">BOOSTER</div><div class="card-sub">Kit Booster</div><div class="card-price">GRATIS <small>2 BOOSTS</small></div><ul class="list"><li>🏷️ Rango Booster</li><li>🛡️ Armor Protección 13</li><li>⚔️ Afilado 13</li><li>📦 Kit cada 1 día</li><li>💰 1.5M cada 1 día</li></ul><a class="btn-main" style="background:#ff41ff" href="https://discord.gg/Py2YZaG8sW" target="_blank">Añadir al carrito +</a><button class="btn-sec" onclick="openModal(4)">Ver detalles +</button></div>
+
+</div>
+
+<div id="unbans" class="grid">
+
+<div class="card" style="--accent:#22c55e"><div class="card-top"><div class="card-icon">🔓</div></div><div class="card-name">UNBAN 30D</div><div class="card-sub">Unban Temporal</div><div class="card-price">$2 <small>USD</small></div><ul class="list"><li>✅ Desbaneo 30 días</li><li>🎮 Vuelve a jugar</li></ul><a class="btn-main" style="background:#22c55e" href="https://discord.gg/Py2YZaG8sW" target="_blank">Añadir al carrito +</a><button class="btn-sec" onclick="openModal(5)">Ver detalles +</button></div>
+
+<div class="card" style="--accent:#06b6d4"><div class="card-top"><div class="card-icon">♾️</div></div><div class="card-name">PERMA</div><div class="card-sub">Unban Permanente</div><div class="card-price">$6 <small>USD</small></div><ul class="list"><li>♾️ Desbaneo para siempre</li><li>🎮 Nunca más pagas</li></ul><a class="btn-main" style="background:#06b6d4" href="https://discord.gg/Py2YZaG8sW" target="_blank">Añadir al carrito +</a><button class="btn-sec" onclick="openModal(6)">Ver detalles +</button></div>
+
+</div>
+
+<div class="ip-box">
 <div style="color:#a855f7;font-weight:800;font-size:11px;letter-spacing:2px">ASTRAL SMP - TEMPORADA 3</div>
-<div class="ip-line"><span class="ip-text" id="ip">209.133.215.154</span><button class="btn-copy" onclick="copyTxt('ip')">COPIAR IP</button></div>
-<div class="ip-line"><span class="ip-text" id="port">50063</span><button class="btn-copy" onclick="copyTxt('port')">COPIAR PUERTO</button></div>
+<div class="ip-line"><span style="font-family:monospace">209.133.215.154</span><button onclick="copy('209.133.215.154')" style="background:#7c3aed;color:white;border:none;padding:6px 12px;border-radius:8px;font-weight:700">COPIAR IP</button></div>
+<div class="ip-line"><span style="font-family:monospace">50063</span><button onclick="copy('50063')" style="background:#7c3aed;color:white;border:none;padding:6px 12px;border-radius:8px;font-weight:700">COPIAR PUERTO</button></div>
 </div>
 
-<div class="modal" id="modal" onclick="if(event.target==this)closeModal()">
-<div class="modal-box" id="modalBox">
-<div class="modal-icon" id="mIcon">👑</div>
-<div style="font-size:22px;font-weight:900" id="mTitle">PERSONALIZADO</div>
-<div style="color:#34d399;font-size:12px" id="mSub"></div>
-<div style="font-size:28px;font-weight:900;margin:10px 0;color:#fbbf24" id="mPrice"></div>
-<div class="modal-list" id="mList"></div>
-<a class="btn btn-buy" id="mDiscord" href="https://discord.gg/Py2YZaG8sW" target="_blank" style="display:block;width:100%;margin-top:10px;padding:14px">COMPRAR EN DISCORD</a>
-<button class="btn btn-view" onclick="closeModal()" style="width:100%;margin-top:8px;padding:12px">CERRAR</button>
-</div>
-</div>
+<div class="warn">⛔ ADVERTENCIA: Los rangos solo se hacen con <b>jereklein</b>. No pagues a nadie más. Esta es la TIENDA OFICIAL de Astral SMP.</div>
+
+<div class="modal" id="modal" onclick="if(event.target==this)closeModal()"><div class="modal-box" id="mBox"><div style="font-size:50px" id="mIcon">👑</div><div style="font-size:20px;font-weight:900;margin:10px 0" id="mTitle"></div><div id="mList"></div><button class="btn-main" onclick="closeModal()">CERRAR</button></div></div>
 
 <script>
-const kits=[
-{icon:'👑',name:'PERSONALIZADO',desc:'Kit único personalizado a tu elección',price:'$25',accent:'gold',stats:['Rango en el servidor','Armadura a elección','Afilado a elección','Kit único personalizado']},
-{icon:'💀',name:'ANCESTRAL',desc:'Protección 18 • Filo 18 • 20M cada 24h',price:'$14',accent:'#ef4444',stats:['Rango en el servidor','Armadura Protección 18','Afilado 18','Kit cada 1 día','20M cada 1 día']},
-{icon:'🔮',name:'MISTICO',desc:'Protección 16 • Filo 16 • 15M cada 24h',price:'$8',accent:'#a855f7',stats:['Rango en el servidor','Armadura Protección 16','Afilado 16','Kit cada 1 día','15M cada 1 día']},
-{icon:'🐍',name:'MEDUSA',desc:'Protección 14 • Filo 14 • 10M cada 24h',price:'$4',accent:'#10b981',stats:['Rango en el servidor','Armadura Protección 14','Afilado 14','Kit cada 1 día','10M cada 1 día']},
-{icon:'🚀',name:'KIT BOOSTER',desc:'Protección 13 • Filo 13 • Gratis por 2 boosts',price:'GRATIS',accent:'#ff41ff',stats:['Rango Booster en el servidor','Armadura Protección 13','Afilado 13','Kit cada 1 día','1.5M cada 1 día']},
-{icon:'🔓',name:'UNBAN 30 DIAS',desc:'Desbaneo por 30 días',price:'$2',accent:'#22c55e',stats:['Desbaneo 30 días','Vuelve a jugar']},
-{icon:'♾️',name:'UNBAN PERMANENTE',desc:'Desbaneo para siempre',price:'$6',accent:'#06b6d4',stats:['Desbaneo permanente','Nunca más pagas']},
+const data=[
+{icon:'👑',title:'PERSONALIZADO',color:'gold',list:['Rango en el servidor','Armadura a elección','Afilado a elección']},
+{icon:'💀',title:'ANCESTRAL',color:'#ef4444',list:['Rango','Prot 18','Filo 18','20M cada día']},
+{icon:'🔮',title:'MISTICO',color:'#a855f7',list:['Rango','Prot 16','Filo 16','15M cada día']},
+{icon:'🐍',title:'MEDUSA',color:'#10b981',list:['Rango','Prot 14','Filo 14','10M cada día']},
+{icon:'🚀',title:'BOOSTER',color:'#ff41ff',list:['Rango Booster','Prot 13','Filo 13','Gratis x2 boosts']},
+{icon:'🔓',title:'UNBAN 30D',color:'#22c55e',list:['Desbaneo 30 días']},
+{icon:'♾️',title:'PERMA',color:'#06b6d4',list:['Desbaneo para siempre']},
 ];
-function render(){
-document.getElementById('kits').innerHTML=kits.map((k,i)=>`
-<div class="kit-row" style="--accent:${k.accent}">
-<div class="kit-icon" style="border-color:${k.accent}">${k.icon}</div>
-<div class="kit-info"><div class="kit-name" style="color:${k.accent=='gold'?'#fbbf24':k.accent}">${k.name}</div><div class="kit-desc">${k.desc}</div></div>
-<div class="kit-price">${k.price}${k.price!='GRATIS'?' USD':''}</div>
-<div class="kit-actions">
-<button class="btn btn-view" onclick="openPreview(${i})">VER</button>
-<a class="btn btn-buy" style="background:${k.accent};${k.accent=='gold'?'color:black':''}" href="https://discord.gg/Py2YZaG8sW" target="_blank">COMPRAR</a>
-</div>
-</div>`).join('');
-}
-render();
-function copyTxt(id){var t=document.getElementById(id).innerText;navigator.clipboard.writeText(t);alert('Copiado: '+t);}
-function openPreview(i){
-const k=kits[i];
-document.getElementById('mIcon').innerText=k.icon;
-document.getElementById('mTitle').innerText=k.name;
-document.getElementById('mTitle').style.color=k.accent=='gold'?'#fbbf24':k.accent;
-document.getElementById('mSub').innerText=k.desc;
-document.getElementById('mPrice').innerText=k.price+(k.price=='GRATIS'?'':' USD');
-document.getElementById('modalBox').style.setProperty('--accent',k.accent);
-document.getElementById('mList').innerHTML=k.stats.map(s=>`<div class="modal-item">✔️ ${s}</div>`).join('');
-document.getElementById('modal').classList.add('active');
-}
+function showTab(id,btn){document.querySelectorAll('.grid').forEach(g=>g.classList.remove('active'));document.querySelectorAll('.tab-btn').forEach(b=>b.classList.remove('active'));document.getElementById(id).classList.add('active');btn.classList.add('active')}
+function copy(t){navigator.clipboard.writeText(t);alert('Copiado: '+t)}
+function openModal(i){const k=data[i];document.getElementById('mIcon').innerText=k.icon;document.getElementById('mTitle').innerText=k.title;document.getElementById('mBox').style.borderColor=k.color;document.getElementById('mList').innerHTML=k.list.map(x=>'<div style="padding:8px;border-bottom:1px solid #1e1840;text-align:left">✔️ '+x+'</div>').join('');document.getElementById('modal').classList.add('active')}
 function closeModal(){document.getElementById('modal').classList.remove('active')}
 </script>
 </body>
