@@ -6,49 +6,66 @@
 <title>Astral SMP</title>
 <style>
 *{margin:0;padding:0;box-sizing:border-box}
-body{background:#0a060e;color:white;font-family:sans-serif;padding:10px;min-height:100vh;position:relative;overflow-x:hidden}
-.bg{position:fixed;inset:0;z-index:-1;background:radial-gradient(ellipse at top,#2a0a1a 0%,#150810 40%,#0a050f 100%)}
-.blob{position:fixed;border-radius:50%;filter:blur(70px);opacity:0.6;animation:float 10s infinite ease-in-out}
-.b1{width:500px;height:500px;background:radial-gradient(circle,#7f1d1d 0%,#4c1d95 100%);top:-120px;left:-150px}
-.b2{width:400px;height:400px;background:radial-gradient(circle,#a855f7 0%,#dc2626 100%);bottom:-100px;right:-100px}
-.b3{width:300px;height:300px;background:radial-gradient(circle,#ff3366,#7c3aed);top:45%;left:50%;opacity:0.35}
-@keyframes float{0%,100%{transform:translate(0,0) scale(1)}50%{transform:translate(25px,-20px) scale(1.2)}}
-.header{text-align:center;margin:25px 0 10px}
-.header h1{font-size:54px;font-weight:900;letter-spacing:8px;text-shadow:0 0 10px #dc2626,0 0 35px #a855f7,0 0 70px #7f1d1d;animation:titleGlow 1.6s infinite alternate}
-@keyframes titleGlow{from{text-shadow:0 0 10px #dc2626,0 0 20px #a855f7}to{text-shadow:0 0 25px #ff4444,0 0 50px #c084fc}}
-.tabs{max-width:850px;margin:15px auto;display:flex;gap:10px}
-.tab-btn{flex:1;padding:13px;border-radius:14px;border:1px solid #2a1a2a;background:rgba(20,8,15,0.8);color:#9ca3af;font-weight:800;cursor:pointer}
-.tab-btn.active{background:linear-gradient(90deg,#dc2626,#a855f7);color:white;box-shadow:0 0 20px rgba(220,38,38,0.5)}
-.list-box{max-width:850px;margin:0 auto;display:none;flex-direction:column;gap:12px}
+body{background:#07030a;color:white;font-family:sans-serif;padding:10px;min-height:100vh;position:relative;overflow-x:hidden}
+.bg{position:fixed;inset:0;z-index:-1;background:radial-gradient(ellipse at top,#2a0a18 0%,#150810 45%,#07030a 100%)}
+.blob{position:fixed;border-radius:50%;filter:blur(80px);opacity:0.55;animation:float 12s infinite ease-in-out}
+.b1{width:600px;height:600px;background:radial-gradient(circle,#7f1d1d,#4c1d95);top:-150px;left:-150px}
+.b2{width:500px;height:500px;background:radial-gradient(circle,#a855f7,#7f1d1d);bottom:-150px;right:-150px}
+@keyframes float{0%,100%{transform:translate(0,0)}50%{transform:translate(30px,-20px) scale(1.15)}}
+
+.header{text-align:center;margin:28px 0 8px}
+.header h1{font-size:62px;font-weight:900;letter-spacing:10px;line-height:1;text-transform:uppercase;background:linear-gradient(180deg,#fff 0%,#ffb3c0 50%,#a855f7 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;filter:drop-shadow(0 0 12px #dc2626) drop-shadow(0 0 35px #7c3aed);animation:titleGlow 2s infinite alternate}
+.header .sub{margin-top:10px;display:inline-block;padding:7px 18px;border:1px solid #3a1a2a;border-radius:20px;background:rgba(255,255,255,0.04);backdrop-filter:blur(10px);font-size:11px;letter-spacing:3px;color:#f9a8d4;font-weight:700}
+.header .sub2{margin-top:8px;color:#6b7280;font-size:10px;letter-spacing:2px}
+@keyframes titleGlow{from{filter:drop-shadow(0 0 10px #dc2626) drop-shadow(0 0 20px #7c3aed)}to{filter:drop-shadow(0 0 20px #ff4444) drop-shadow(0 0 45px #a855f7)}}
+
+.tabs{max-width:900px;margin:22px auto;display:flex;gap:12px}
+.tab-btn{flex:1;padding:16px;border-radius:16px;border:1px solid #2a1a2a;background:rgba(20,8,15,0.85);backdrop-filter:blur(10px);color:#8b7a8a;font-weight:800;font-size:14px;letter-spacing:1px;cursor:pointer;transition:0.2s}
+.tab-btn.active{background:linear-gradient(90deg,#dc2626,#a855f7);color:white;box-shadow:0 8px 25px rgba(220,38,38,0.45);border-color:transparent}
+
+.list-box{max-width:900px;margin:0 auto;display:none;flex-direction:column;gap:18px}
 .list-box.active{display:flex}
-.kit-row{display:flex;align-items:center;gap:14px;padding:14px 16px;background:linear-gradient(90deg,rgba(40,15,22,0.9),rgba(25,10,30,0.9));border:1px solid #2a1a2a;border-radius:18px;backdrop-filter:blur(12px);cursor:pointer;transition:0.2s;position:relative}
-.kit-row::before{content:'';position:absolute;left:0;top:0;bottom:0;width:4px;background:var(--accent);box-shadow:0 0 15px var(--accent)}
+
+.kit-row{display:flex;align-items:center;gap:22px;padding:26px 22px;background:linear-gradient(90deg,rgba(45,18,25,0.95),rgba(30,12,35,0.95));border:1px solid rgba(255,255,255,0.06);border-radius:22px;backdrop-filter:blur(16px);transition:0.25s;position:relative}
+.kit-row:hover{transform:translateY(-3px);border-color:rgba(255,255,255,0.12);box-shadow:0 18px 40px rgba(0,0,0,0.5)}
 .kit-row:active{transform:scale(0.97)}
-.kit-row:hover{transform:translateX(4px);border-color:var(--accent)}
-.kit-icon{width:68px;height:68px;background:radial-gradient(circle,rgba(255,255,255,0.08),rgba(0,0,0,0.5));border:1px solid var(--accent);border-radius:14px;display:flex;align-items:center;justify-content:center;font-size:34px;flex-shrink:0;box-shadow:0 0 20px var(--accent)}
+.kit-icon{width:96px;height:96px;background:linear-gradient(180deg,rgba(255,255,255,0.08),rgba(0,0,0,0.4));border:1px solid rgba(255,255,255,0.1);border-radius:18px;display:flex;align-items:center;justify-content:center;font-size:48px;flex-shrink:0;box-shadow:inset 0 1px 1px rgba(255,255,255,0.1),0 10px 20px rgba(0,0,0,0.3)}
 .kit-info{flex:1;min-width:0}
-.kit-name{font-size:18px;font-weight:900;color:var(--accent);text-shadow:0 0 10px var(--accent);animation:rankPulse 2s infinite alternate}
-@keyframes rankPulse{from{opacity:0.8}to{opacity:1}}
-.kit-desc{font-size:11px;color:#9ca3af;margin-top:3px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
-.kit-price{font-size:17px;font-weight:900;color:#fbbf24;min-width:80px;text-align:right}
-.kit-actions{display:flex;flex-direction:column;gap:6px;flex-shrink:0;width:110px}
-.btn-ver{padding:8px;border:1px solid var(--accent);color:var(--accent);background:rgba(0,0,0,0.3);border-radius:9px;font-weight:800;font-size:11px;cursor:pointer}
-.btn-buy{padding:9px;background:var(--accent);color:white;border:none;border-radius:9px;font-weight:900;font-size:11px;cursor:pointer;text-decoration:none;text-align:center;box-shadow:0 0 15px var(--accent)}
-.btn-buy:active,.btn-ver:active{transform:scale(0.92)}
-.ip-box{max-width:850px;margin:25px auto 10px;background:rgba(20,8,15,0.9);border:1px solid #2a1a2a;border-radius:14px;padding:14px;text-align:center}
-.ip-line{display:flex;justify-content:space-between;align-items:center;background:#0a0508;padding:12px;border-radius:10px;margin-top:8px;border:1px solid #2a1a2a}
-.warn{max-width:850px;margin:18px auto;background:linear-gradient(90deg,#450a0a,#7f1d1d);border:2px solid #ef4444;border-radius:12px;padding:15px;text-align:center;color:#fecaca;font-size:14px;font-weight:800;animation:warnBeat 0.9s infinite alternate}
-@keyframes warnBeat{from{transform:scale(1)}to{transform:scale(1.03);box-shadow:0 0 40px rgba(239,68,68,0.9)}}
-.modal{display:none;position:fixed;inset:0;background:rgba(0,0,0,0.85);backdrop-filter:blur(12px);z-index:999;align-items:center;justify-content:center;padding:20px}
+.kit-name{font-size:22px;font-weight:900;letter-spacing:0.5px;line-height:1.1;color:#fff}
+.kit-name span{color:var(--accent)}
+.kit-badges{display:flex;gap:6px;margin:8px 0 6px;flex-wrap:wrap}
+.badge{font-size:9px;font-weight:800;padding:4px 8px;border-radius:20px;background:rgba(255,255,255,0.06);border:1px solid rgba(255,255,255,0.08);color:#cbd5e1;letter-spacing:0.5px}
+.badge.accent{background:var(--accent);color:white;border-color:var(--accent);box-shadow:0 0 12px var(--accent)}
+.kit-desc{font-size:13px;color:#a89aaa;line-height:1.4;margin-top:2px}
+.kit-desc b{color:#e5c9c9;font-weight:700}
+.kit-price{font-size:22px;font-weight:900;color:#fbbf24;min-width:110px;text-align:right;line-height:1}
+.kit-price small{display:block;font-size:10px;color:#8b7a8a;font-weight:600;letter-spacing:1px;margin-top:2px}
+.kit-actions{display:flex;flex-direction:column;gap:8px;flex-shrink:0;width:132px}
+.btn-ver{padding:11px;border:1px solid rgba(255,255,255,0.12);color:#d8b4fe;background:rgba(0,0,0,0.25);border-radius:11px;font-weight:800;font-size:12px;cursor:pointer;letter-spacing:0.5px;transition:0.2s}
+.btn-buy{padding:12px;background:var(--accent);color:white;border:none;border-radius:11px;font-weight:900;font-size:12px;cursor:pointer;text-decoration:none;text-align:center;letter-spacing:0.5px;box-shadow:0 6px 20px rgba(0,0,0,0.4);transition:0.2s}
+.btn-ver:hover{background:rgba(255,255,255,0.08)}
+.btn-buy:hover{filter:brightness(1.15);transform:translateY(-1px)}
+
+.ip-box{max-width:900px;margin:32px auto 14px;background:rgba(18,8,14,0.9);border:1px solid rgba(255,255,255,0.06);border-radius:18px;padding:18px;text-align:center;backdrop-filter:blur(12px)}
+.ip-box-title{color:#f87171;font-weight:800;font-size:12px;letter-spacing:3px}
+.ip-line{display:flex;justify-content:space-between;align-items:center;background:#0a0408;padding:14px 16px;border-radius:12px;margin-top:10px;border:1px solid rgba(255,255,255,0.06);font-family:monospace;font-size:14px}
+.warn{max-width:900px;margin:18px auto;background:linear-gradient(90deg,#2a0a0a,#4a1010);border:1px solid #7f1d1d;border-radius:14px;padding:16px;text-align:center;color:#fecaca;font-size:14px;font-weight:700;line-height:1.4;animation:warnPulse 1.2s infinite alternate}
+@keyframes warnPulse{from{box-shadow:0 0 0 rgba(239,68,68,0)}to{box-shadow:0 0 25px rgba(239,68,68,0.35)}}
+
+.modal{display:none;position:fixed;inset:0;background:rgba(0,0,0,0.85);backdrop-filter:blur(14px);z-index:999;align-items:center;justify-content:center;padding:20px}
 .modal.active{display:flex}
-.modal-box{background:linear-gradient(180deg,#231014,#12080a);border:2px solid var(--accent,#a855f7);border-radius:20px;padding:22px;max-width:420px;width:100%;text-align:center;animation:pop 0.3s}
-@keyframes pop{from{transform:scale(0.7);opacity:0}to{transform:scale(1);opacity:1}}
+.modal-box{background:linear-gradient(180deg,#23101a,#12080e);border:1px solid rgba(255,255,255,0.1);border-radius:22px;padding:26px;max-width:440px;width:100%;text-align:center;animation:pop 0.35s cubic-bezier(.34,1.56,.64,1)}
+@keyframes pop{from{transform:scale(0.8);opacity:0}to{transform:scale(1);opacity:1}}
 </style>
 </head>
 <body>
-<div class="bg"></div><div class="blob b1"></div><div class="blob b2"></div><div class="blob b3"></div>
+<div class="bg"></div><div class="blob b1"></div><div class="blob b2"></div>
 
-<div class="header"><h1>ASTRAL SMP</h1></div>
+<div class="header">
+<h1>ASTRAL SMP</h1>
+<div class="sub">✦ TIENDA OFICIAL • TEMPORADA 3 ✦</div>
+<div class="sub2">LOS MEJORES KITS • ENTREGA INSTANTANEA</div>
+</div>
 
 <div class="tabs">
 <button class="tab-btn active" onclick="showTab('rangos',this)">RANGOS</button>
@@ -59,70 +76,71 @@ body{background:#0a060e;color:white;font-family:sans-serif;padding:10px;min-heig
 <div id="unbans" class="list-box"></div>
 
 <div class="ip-box">
-<div style="color:#f87171;font-weight:800;font-size:11px;letter-spacing:2px">TEMPORADA 3</div>
-<div class="ip-line"><span style="font-family:monospace">209.133.215.154</span><button onclick="copy('209.133.215.154')" style="background:#dc2626;color:white;border:none;padding:6px 12px;border-radius:8px;font-weight:700">COPIAR IP</button></div>
-<div class="ip-line"><span style="font-family:monospace">50063</span><button onclick="copy('50063')" style="background:#dc2626;color:white;border:none;padding:6px 12px;border-radius:8px;font-weight:700">COPIAR PUERTO</button></div>
+<div class="ip-box-title">TEMPORADA 3 • CONECTATE AHORA</div>
+<div class="ip-line"><span>209.133.215.154</span><button onclick="copy('209.133.215.154')" style="background:#dc2626;color:white;border:none;padding:8px 14px;border-radius:9px;font-weight:800">COPIAR IP</button></div>
+<div class="ip-line"><span>50063</span><button onclick="copy('50063')" style="background:#dc2626;color:white;border:none;padding:8px 14px;border-radius:9px;font-weight:800">COPIAR PUERTO</button></div>
 </div>
 
-<div class="warn">⛔ ADVERTENCIA: Los rangos solo se hacen con <b>jereklein</b>. No pagues a nadie más.</div>
+<div class="warn">⛔ ADVERTENCIA: Los rangos solo se hacen con <b>jereklein</b>. No pagues a nadie más. Si te estafan no es responsabilidad de Astral.</div>
 
 <div class="modal" id="modal" onclick="if(event.target==this)closeModal()">
 <div class="modal-box" id="mBox">
-<div style="font-size:64px" id="mIcon">👑</div>
-<div style="font-size:26px;font-weight:900;margin:8px 0" id="mTitle"></div>
-<div style="color:#fbbf24;font-size:22px;font-weight:900" id="mPrice"></div>
-<div id="mList" style="margin-top:12px"></div>
-<a href="https://discord.gg/Py2YZaG8sW" target="_blank" style="display:block;width:100%;background:linear-gradient(90deg,#dc2626,#a855f7);color:white;padding:14px;border-radius:12px;font-weight:900;margin-top:14px;text-decoration:none">COMPRAR EN DISCORD</a>
-<button style="width:100%;background:transparent;border:1px solid #2a1a2a;color:#9ca3af;padding:12px;border-radius:12px;margin-top:8px" onclick="closeModal()">CERRAR</button>
+<div style="font-size:68px" id="mIcon">👑</div>
+<div style="font-size:28px;font-weight:900;margin:10px 0" id="mTitle"></div>
+<div style="color:#fbbf24;font-size:24px;font-weight:900" id="mPrice"></div>
+<div id="mList" style="margin-top:14px;text-align:left"></div>
+<a href="https://discord.gg/Py2YZaG8sW" target="_blank" style="display:block;width:100%;background:linear-gradient(90deg,#dc2626,#a855f7);color:white;padding:15px;border-radius:12px;font-weight:900;margin-top:16px;text-decoration:none">COMPRAR EN DISCORD</a>
+<button style="width:100%;background:transparent;border:1px solid #2a1a2a;color:#9ca3af;padding:13px;border-radius:12px;margin-top:10px;font-weight:700" onclick="closeModal()">CERRAR</button>
 </div>
 </div>
 
 <script>
 const rangos=[
-{icon:'👑',name:'KIT PERSONALIZADO',desc:'Todo a elección • Kit único',price:'$25',accent:'gold',stats:['👑 Rango Personalizado','🛡️ Armadura a elección','⚔️ Afilado a elección','📦 Kit único personalizado','⏳ Máximo 2 temporadas']},
-{icon:'☄️',name:'KIT ASTRAL',desc:'Protección 18 • Filo 18 • 20M cada día',price:'$14',accent:'#ff41ff',stats:['🏷️ Rango Astral','🛡️ Protección 18','⚔️ Filo 18','💰 20M cada día','⏳ Máximo 2 temporadas']},
-{icon:'🌌',name:'KIT QUASAR',desc:'Protección 16 • Filo 16 • 15M cada día',price:'$8',accent:'#a78bfa',stats:['🏷️ Rango Quasar','🛡️ Protección 16','⚔️ Filo 16','💰 15M cada día']},
-{icon:'💫',name:'KIT NOVA',desc:'Protección 14 • Filo 14 • 10M cada día',price:'$4',accent:'#38bdf8',stats:['🏷️ Rango Nova','🛡️ Protección 14','⚔️ Filo 14','💰 10M cada día']},
+{icon:'👑',name1:'KIT',name2:' PERSONALIZADO',desc:'El mejor de todos • <b>Todo a tu elección</b> • Armadura, filo y kit único creado para vos',price:'$5',usd:'USD',badges:['MEJOR KIT','PERSONALIZABLE','2 TEMP'],accent:'#fbbf24',stats:['👑 Rango Personalizado en el servidor','🛡️ Armadura completa a elección (Prot a elección)','⚔️ Espada Afilado a elección','📦 Kit único personalizado solo para vos','⏳ Duración máxima: 2 temporadas']},
+{icon:'☄️',name1:'KIT',name2:' ASTRAL',desc:'Rango Astral • <b>Protección 18</b> • <b>Filo 18</b> • Kit diario + <b>20M</b> cada 24h',price:'$14',usd:'USD',badges:['POPULAR','P18','20M/DIA'],accent:'#ff4de1',stats:['🏷️ Rango Astral','🛡️ Armadura Protección 18','⚔️ Afilado 18','📦 Kit reclamable cada 1 día','💰 20 Millones cada 1 día']},
+{icon:'🌌',name1:'KIT',name2:' QUASAR',desc:'Poder Galáctico • <b>Protección 16</b> • <b>Filo 16</b> • Kit diario + <b>15M</b> cada 24h',price:'$8',usd:'USD',badges:['EQUILIBRADO','P16','15M/DIA'],accent:'#a78bfa',stats:['🏷️ Rango Quasar','🛡️ Protección 16','⚔️ Filo 16','💰 15M cada día']},
+{icon:'💫',name1:'KIT',name2:' NOVA',desc:'Explosión Estelar • <b>Protección 14</b> • <b>Filo 14</b> • Ideal para empezar • <b>10M</b> cada día',price:'$4',usd:'USD',badges:['STARTER','P14','10M/DIA'],accent:'#38bdf8',stats:['🏷️ Rango Nova','🛡️ Protección 14','⚔️ Filo 14','💰 10M cada día']},
 ];
 const unbans=[
-{icon:'🔓',name:'UNBAN 30 DIAS',desc:'Desbaneo 30 días',price:'$2',accent:'#22c55e',stats:['✅ Desbaneo 30 días']},
-{icon:'♾️',name:'PERMA',desc:'Para siempre',price:'$6',accent:'#06b6d4',stats:['♾️ Desbaneo permanente']},
+{icon:'🔓',name1:'UNBAN',name2:' 30 DIAS',desc:'Desbaneo temporal • Vuelve al servidor por 30 días',price:'$2',usd:'USD',badges:['TEMPORAL'],accent:'#22c55e',stats:['✅ Desbaneo 30 días','🎮 Vuelve a jugar']},
+{icon:'♾️',name1:'UNBAN',name2:' PERMA',desc:'Desbaneo para siempre • Una sola vez y nunca más pagas',price:'$6',usd:'USD',badges:['PERMANENTE','MEJOR VALOR'],accent:'#06b6d4',stats:['♾️ Desbaneo permanente','🎮 Nunca más pagas']},
 ];
 function render(){
 document.getElementById('rangos').innerHTML=rangos.map((k,i)=>`
 <div class="kit-row" style="--accent:${k.accent}">
 <div class="kit-icon">${k.icon}</div>
-<div class="kit-info"><div class="kit-name">${k.name}</div><div class="kit-desc">${k.desc}</div></div>
-<div class="kit-price">${k.price} USD</div>
+<div class="kit-info">
+<div class="kit-name">${k.name1}<span style="color:${k.accent}">${k.name2}</span></div>
+<div class="kit-badges">${k.badges.map((b,j)=>`<span class="badge ${j==0?'accent':''}" style="${j==0?`background:${k.accent};border-color:${k.accent}`:''}">${b}</span>`).join('')}</div>
+<div class="kit-desc">${k.desc}</div>
+</div>
+<div class="kit-price">${k.price}<small>${k.usd}</small></div>
 <div class="kit-actions">
 <button class="btn-ver" style="--accent:${k.accent}" onclick="openR(${i})">VER</button>
-<a class="btn-buy" style="background:${k.accent};${k.accent=='gold'?'color:black':''}" href="https://discord.gg/Py2YZaG8sW" target="_blank">COMPRAR</a>
+<a class="btn-buy" style="background:${k.accent};${k.accent=='#fbbf24'?'color:black':''}" href="https://discord.gg/Py2YZaG8sW" target="_blank">COMPRAR</a>
 </div>
 </div>`).join('');
 document.getElementById('unbans').innerHTML=unbans.map((k,i)=>`
 <div class="kit-row" style="--accent:${k.accent}">
 <div class="kit-icon">${k.icon}</div>
-<div class="kit-info"><div class="kit-name">${k.name}</div><div class="kit-desc">${k.desc}</div></div>
-<div class="kit-price">${k.price} USD</div>
-<div class="kit-actions">
-<button class="btn-ver" style="--accent:${k.accent}" onclick="openU(${i})">VER</button>
-<a class="btn-buy" style="background:${k.accent}" href="https://discord.gg/Py2YZaG8sW" target="_blank">COMPRAR</a>
-</div>
+<div class="kit-info"><div class="kit-name">${k.name1}<span style="color:${k.accent}">${k.name2}</span></div><div class="kit-badges">${k.badges.map(b=>`<span class="badge">${b}</span>`).join('')}</div><div class="kit-desc">${k.desc}</div></div>
+<div class="kit-price">${k.price}<small>${k.usd}</small></div>
+<div class="kit-actions"><button class="btn-ver" onclick="openU(${i})">VER</button><a class="btn-buy" style="background:${k.accent}" href="https://discord.gg/Py2YZaG8sW" target="_blank">COMPRAR</a></div>
 </div>`).join('');
 }
 render();
-function showTab(id,btn){document.querySelectorAll('.list-box').forEach(g=>g.classList.remove('active'));document.querySelectorAll('.tab-btn').forEach(b=>b.classList.remove('active'));document.getElementById(id).classList.add('active');btn.classList.add('active')}
+function showTab(id,btn){document.querySelectorAll('.list-box').forEach(g=>g.classList.remove('active'));document.querySelectorAll('.tab-btn').forEach(b=>b.classList.remove('active'));document.getElementById(id).classList.add('active');btn.classList.add('active');if(navigator.vibrate) navigator.vibrate(20)}
 function copy(t){navigator.clipboard.writeText(t);alert('Copiado: '+t)}
 function openR(i){open(rangos[i])}
 function openU(i){open(unbans[i])}
 function open(k){
 document.getElementById('mIcon').innerText=k.icon;
-document.getElementById('mTitle').innerText=k.name;
-document.getElementById('mTitle').style.color=k.accent=='gold'?'#fbbf24':k.accent;
-document.getElementById('mPrice').innerText=k.price+' USD';
-document.getElementById('mBox').style.borderColor=k.accent=='gold'?'#fbbf24':k.accent;
-document.getElementById('mList').innerHTML=k.stats.map(x=>'<div style="padding:10px;text-align:left;border-bottom:1px solid #2a1a2a">✔️ '+x+'</div>').join('');
+document.getElementById('mTitle').innerHTML=k.name1+`<span style="color:${k.accent}">${k.name2}</span>`;
+document.getElementById('mPrice').innerText=k.price+' '+k.usd;
+document.getElementById('mBox').style.borderColor=k.accent;
+document.getElementById('mList').innerHTML=k.stats.map(x=>`<div style="padding:11px 0;border-bottom:1px solid rgba(255,255,255,0.06);font-size:13px">✔️ ${x}</div>`).join('');
 document.getElementById('modal').classList.add('active');
+if(navigator.vibrate) navigator.vibrate(40);
 }
 function closeModal(){document.getElementById('modal').classList.remove('active')}
 </script>
