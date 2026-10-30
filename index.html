@@ -7,44 +7,45 @@
 <style>
 *{margin:0;padding:0;box-sizing:border-box}
 body{background:#070311;color:white;font-family:sans-serif;padding:15px}
-.header-glow{text-align:center;margin:30px 0 10px}
+.header-glow{text-align:center;margin:25px 0 10px}
 .header-glow h1{font-size:42px;font-weight:900;color:#c084fc;letter-spacing:5px;text-shadow:0 0 10px #a855f7,0 0 20px #a855f7,0 0 40px #7c3aed,0 0 80px #a855f7;animation:glow 2s infinite alternate}
 @keyframes glow{0%{text-shadow:0 0 10px #a855f7,0 0 20px #a855f7}100%{text-shadow:0 0 20px #c084fc,0 0 40px #a855f7,0 0 60px #7c3aed}}
 .warn{max-width:600px;margin:15px auto;background:#1a0a0a;border:1px solid #ef4444;border-radius:10px;padding:10px;text-align:center;font-size:11px;color:#fecaca}
 .ip-box{max-width:520px;margin:15px auto;background:#120b25;border:1px solid #a855f7;border-radius:16px;padding:14px}
-.ip-row{display:flex;justify-content:space-between;align-items:center;background:#070311;padding:10px;border-radius:10px;margin-top:8px;border:1px solid #1f103d}
-.ip-val{font-family:monospace;font-weight:900;color:#a78bfa}
-.btn-copy{background:#7c3aed;border:none;color:white;padding:6px 14px;border-radius:8px;font-weight:800;font-size:11px;cursor:pointer}
+.ip-title{text-align:center;color:#a855f7;font-weight:800;font-size:11px;letter-spacing:2px;margin-bottom:10px}
+.ip-row{display:flex;justify-content:space-between;align-items:center;background:#070311;padding:12px;border-radius:10px;margin-top:8px;border:1px solid #1f103d}
+.ip-val{font-family:monospace;font-weight:900;color:white;font-size:13px;letter-spacing:1px}
+.btn-copy{background:#7c3aed;border:none;color:white;padding:7px 14px;border-radius:8px;font-weight:800;font-size:11px;cursor:pointer}
 .notice{max-width:500px;margin:15px auto;background:rgba(168,85,247,0.1);border:1px dashed #a855f7;border-radius:30px;padding:8px;text-align:center;font-size:12px;color:#d8b4fe}
 .tabs{max-width:380px;margin:15px auto;display:flex;gap:10px}
 .tab-btn{flex:1;padding:12px;border-radius:12px;border:1px solid #2d1b4e;background:#120b25;color:#6b7280;font-weight:800;cursor:pointer}
-.tab-btn.active{background:linear-gradient(90deg,#7c3aed,#a855f7);color:white;border-color:#a855f7;box-shadow:0 0 15px rgba(168,85,247,0.4)}
+.tab-btn.active{background:linear-gradient(90deg,#7c3aed,#a855f7);color:white;border-color:#a855f7}
 .grid{display:none;max-width:1200px;margin:0 auto;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:16px}
 .grid.active{display:grid}
-.card{background:#111022;border:2px solid #1e1840;border-radius:18px;overflow:hidden;position:relative}
-.card::after{content:'';position:absolute;inset:0;border-radius:18px;pointer-events:none;box-shadow:inset 0 0 20px rgba(168,85,247,0.15)}
-.img-area{height:120px;display:flex;align-items:center;justify-content:center;background:radial-gradient(circle at center,#1a1033,transparent);margin:10px;border-radius:12px;border:1px solid #1e1840}
-.card-title{font-size:20px;font-weight:900;text-align:center;letter-spacing:2px;margin:5px 0}
+.card{background:#111022;border:2px solid #1e1840;border-radius:18px;overflow:hidden}
+.img-area{height:110px;display:flex;align-items:center;justify-content:center;background:radial-gradient(circle at center,#1a1033,transparent);margin:10px;border-radius:12px;border:1px solid #1e1840}
+.card-title{font-size:20px;font-weight:900;text-align:center;letter-spacing:2px}
 .body{padding:12px 15px}
-.subtitle{color:#34d399;font-size:12px;font-weight:700;margin-bottom:5px}
+.subtitle{color:#34d399;font-size:12px;font-weight:700;margin-bottom:4px}
 .price{font-size:28px;font-weight:900}
 .price small{font-size:11px;color:#6b7280}
 .list{margin-top:10px}
 .item{padding:8px 0;font-size:12px;color:#c4b5fd;border-bottom:1px solid #1a1333;display:flex;gap:7px}
-.btn{width:100%;padding:12px;background:white;color:black;border:none;border-radius:10px;font-weight:900;margin-top:12px;display:block;text-align:center;text-decoration:none}
+.btn{width:100%;padding:12px;border:none;border-radius:10px;font-weight:900;margin-top:12px;display:block;text-align:center;text-decoration:none}
 .btn-violet{background:linear-gradient(90deg,#7c3aed,#a855f7);color:white}
 </style>
 </head>
 <body>
 
-<div class="header-glow"><h1>ASTRAL SMP</h1><p style="color:#6b7280;font-size:11px;letter-spacing:3px;margin-top:5px">TIENDA OFICIAL</p></div>
+<div class="header-glow"><h1>ASTRAL SMP</h1><p style="color:#6b7280;font-size:11px;letter-spacing:3px;margin-top:5px">TEMPORADA 3</p></div>
 
 <div class="warn">⚠️ ADVERTENCIA: Los rangos solo se hacen con <b>jereklein</b>. No pagues a nadie más.</div>
 
 <div class="ip-box">
-<div style="text-align:center;color:#a855f7;font-weight:800;font-size:11px;letter-spacing:2px">🌐 CONECTATE</div>
-<div class="ip-row"><span class="ip-val" id="ip">AstralSMP.aternos.me</span><button class="btn-copy" onclick="copyTxt('ip')">COPIAR IP</button></div>
-<div class="ip-row"><span class="ip-val" id="port">25565</span><button class="btn-copy" onclick="copyTxt('port')">COPIAR PUERTO</button></div>
+<div class="ip-title">ASTRAL SMP - TEMPORADA 3</div>
+<div class="ip-row"><span class="ip-val" id="ip">209.133.215.154</span><button class="btn-copy" onclick="copyTxt('ip')">COPIAR IP</button></div>
+<div class="ip-row"><span class="ip-val" id="port">50063</span><button class="btn-copy" onclick="copyTxt('port')">COPIAR PUERTO</button></div>
+<div class="ip-row"><span class="ip-val" id="full">209.133.215.154:50063</span><button class="btn-copy" onclick="copyTxt('full')">COPIAR IP + PUERTO</button></div>
 </div>
 
 <div class="notice">⏳ Los rangos duran un máximo de <b>2 temporadas</b></div>
@@ -56,7 +57,7 @@ body{background:#070311;color:white;font-family:sans-serif;padding:15px}
 
 <div id="rangos" class="grid active">
 
-<div class="card" style="border-color:gold;box-shadow:0 0 25px rgba(255,215,0,0.15)">
+<div class="card" style="border-color:gold">
 <div class="img-area"><span style="font-size:60px;filter:drop-shadow(0 0 20px gold)">👑</span></div>
 <div class="body">
 <div class="card-title" style="color:gold">PERSONALIZADO</div>
@@ -69,12 +70,12 @@ body{background:#070311;color:white;font-family:sans-serif;padding:15px}
 <div class="item">🍎 64 manzanas + 16 totems</div>
 <div class="item">⏳ Duración: máximo 2 temporadas</div>
 </div>
-<a class="btn" style="background:gold" href="https://discord.gg/Py2YZaG8sW">COMPRAR</a>
+<a class="btn" style="background:gold;color:black" href="https://discord.gg/Py2YZaG8sW">COMPRAR</a>
 </div>
 </div>
 
 <div class="card">
-<div class="img-area"><span style="font-size:60px;filter:drop-shadow(0 0 15px #ef4444)">💀</span></div>
+<div class="img-area"><span style="font-size:55px;filter:drop-shadow(0 0 15px #ef4444)">💀</span></div>
 <div class="body">
 <div class="card-title" style="color:#ef4444">ANCESTRAL</div>
 <div class="subtitle">Kit Ancestral</div>
@@ -91,7 +92,7 @@ body{background:#070311;color:white;font-family:sans-serif;padding:15px}
 </div>
 
 <div class="card">
-<div class="img-area"><span style="font-size:60px;filter:drop-shadow(0 0 15px #a855f7)">🔮</span></div>
+<div class="img-area"><span style="font-size:55px;filter:drop-shadow(0 0 15px #a855f7)">🔮</span></div>
 <div class="body">
 <div class="card-title" style="color:#a78bfa">MISTICO</div>
 <div class="subtitle">Kit Místico</div>
@@ -108,7 +109,7 @@ body{background:#070311;color:white;font-family:sans-serif;padding:15px}
 </div>
 
 <div class="card">
-<div class="img-area"><span style="font-size:60px;filter:drop-shadow(0 0 15px #10b981)">🐍</span></div>
+<div class="img-area"><span style="font-size:55px;filter:drop-shadow(0 0 15px #10b981)">🐍</span></div>
 <div class="body">
 <div class="card-title" style="color:#34d399">MEDUSA</div>
 <div class="subtitle">Kit Medusa</div>
@@ -124,19 +125,17 @@ body{background:#070311;color:white;font-family:sans-serif;padding:15px}
 </div>
 </div>
 
-<!-- NUEVO KIT BOOSTER -->
-<div class="card" style="border-color:#ff41ff;box-shadow:0 0 20px rgba(255,65,255,0.2)">
-<div class="img-area"><span style="font-size:60px;filter:drop-shadow(0 0 20px #ff41ff)">🚀</span></div>
+<div class="card" style="border-color:#ff41ff">
+<div class="img-area"><span style="font-size:55px;filter:drop-shadow(0 0 20px #ff41ff)">🚀</span></div>
 <div class="body">
 <div class="card-title" style="color:#ff41ff">BOOSTER</div>
-<div class="subtitle">🚀 KIT BOOSTER</div>
+<div class="subtitle">KIT BOOSTER</div>
 <div class="price">GRATIS <small>POR BOOSTEAR (2)</small></div>
 <div class="list">
 <div class="item">🎁 CONTIENE</div>
 <div class="item">⏱️ Cada 24 horas 1 kit</div>
 <div class="item">✨ Protección 13</div>
 <div class="item">⚔️ Filo 13</div>
-<div class="item">💜 Beneficio por booster</div>
 </div>
 <a class="btn" style="background:#ff41ff;color:white" href="https://discord.gg/Py2YZaG8sW">BOOSTEAR</a>
 </div>
@@ -145,24 +144,8 @@ body{background:#070311;color:white;font-family:sans-serif;padding:15px}
 </div>
 
 <div id="unban" class="grid">
-<div class="card">
-<div class="img-area"><span style="font-size:60px;filter:drop-shadow(0 0 15px #22c55e)">🔓</span></div>
-<div class="body">
-<div class="card-title" style="color:#22c55e">UNBAN 30 DIAS</div>
-<div class="price">$2 <small>USD</small></div>
-<div class="list"><div class="item">✅ Desbaneo 30 días</div></div>
-<a class="btn" style="background:#22c55e;color:white" href="https://discord.gg/Py2YZaG8sW">COMPRAR</a>
-</div>
-</div>
-<div class="card">
-<div class="img-area"><span style="font-size:60px;filter:drop-shadow(0 0 15px #06b6d4)">♾️</span></div>
-<div class="body">
-<div class="card-title" style="color:#06b6d4">PERMANENTE</div>
-<div class="price">$6 <small>USD</small></div>
-<div class="list"><div class="item">♾️ Desbaneo para siempre</div></div>
-<a class="btn" style="background:#06b6d4;color:white" href="https://discord.gg/Py2YZaG8sW">COMPRAR</a>
-</div>
-</div>
+<div class="card"><div class="img-area"><span style="font-size:55px;filter:drop-shadow(0 0 15px #22c55e)">🔓</span></div><div class="body"><div class="card-title" style="color:#22c55e">UNBAN 30 DIAS</div><div class="price">$2 <small>USD</small></div><div class="list"><div class="item">✅ Desbaneo 30 días</div></div><a class="btn" style="background:#22c55e;color:white" href="https://discord.gg/Py2YZaG8sW">COMPRAR</a></div></div>
+<div class="card"><div class="img-area"><span style="font-size:55px;filter:drop-shadow(0 0 15px #06b6d4)">♾️</span></div><div class="body"><div class="card-title" style="color:#06b6d4">PERMANENTE</div><div class="price">$6 <small>USD</small></div><div class="list"><div class="item">♾️ Desbaneo para siempre</div></div><a class="btn" style="background:#06b6d4;color:white" href="https://discord.gg/Py2YZaG8sW">COMPRAR</a></div></div>
 </div>
 
 <script>
