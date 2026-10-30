@@ -18,40 +18,38 @@ body{background:#07040a;color:white;font-family:'Inter',sans-serif;padding:10px;
 .header h1 span:last-child{color:#d8b4fe}
 .pill{margin-top:14px;display:inline-block;padding:9px 22px;border-radius:30px;background:rgba(255,255,255,0.06);border:1px solid rgba(255,255,255,0.1);font-size:11px;letter-spacing:3px;font-weight:900;color:#f9a8d4}
 
-.tabs{max-width:880px;margin:20px auto;display:flex;gap:12px}
-.tab-btn{flex:1;padding:16px;border-radius:14px;border:1px solid rgba(255,255,255,0.06);background:rgba(20,8,15,0.9);color:#8a7a8a;font-weight:800;font-size:14px;cursor:pointer}
-.tab-btn.active{background:linear-gradient(90deg,#dc2626,#a855f7);color:white;box-shadow:0 8px 24px rgba(220,38,38,0.35)}
+.tabs{max-width:980px;margin:20px auto;display:flex;gap:12px}
+.tab-btn{flex:1;padding:16px;border-radius:14px;border:1px solid rgba(255,255,255,0.12);background:#1a0e16;color:#e5c9c9;font-weight:800;font-size:14px;cursor:pointer;transition:0.2s}
+.tab-btn.active{background:linear-gradient(90deg,#dc2626,#a855f7);color:white;box-shadow:0 8px 24px rgba(220,38,38,0.4);border-color:transparent}
 
-.list-box{max-width:880px;margin:0 auto;display:none;flex-direction:column;gap:20px}
+.list-box{max-width:980px;margin:0 auto;display:none;flex-direction:column;gap:18px}
 .list-box.active{display:flex}
 
-.kit-row{background:linear-gradient(180deg,rgba(48,20,28,0.98),rgba(28,12,32,0.98));border:1px solid rgba(255,255,255,0.08);border-radius:24px;padding:22px 22px 16px;transition:0.2s}
-.kit-row:hover{transform:translateY(-3px);border-color:rgba(255,255,255,0.15);box-shadow:0 20px 40px rgba(0,0,0,0.5)}
-.top{display:flex;gap:20px;align-items:flex-start}
-.kit-icon{width:110px;height:110px;flex-shrink:0;background:linear-gradient(180deg,rgba(255,255,255,0.08),rgba(0,0,0,0.45));border:1px solid rgba(255,255,255,0.1);border-radius:20px;display:flex;align-items:center;justify-content:center;font-size:54px;box-shadow:0 10px 20px rgba(0,0,0,0.4)}
+.kit-row{background:linear-gradient(90deg,rgba(48,20,28,0.98),rgba(32,14,38,0.98));border:1px solid rgba(255,255,255,0.1);border-radius:22px;padding:20px 20px 16px;transition:0.2s;width:100%}
+.kit-row:hover{border-color:rgba(255,255,255,0.18)}
+.top{display:flex;gap:18px;align-items:center}
+.kit-icon{width:108px;height:108px;flex-shrink:0;background:linear-gradient(180deg,rgba(255,255,255,0.08),rgba(0,0,0,0.45));border:1px solid rgba(255,255,255,0.1);border-radius:18px;display:flex;align-items:center;justify-content:center;font-size:52px}
 .kit-info{flex:1;min-width:0}
-.kit-name{font-family:'Black Han Sans',sans-serif;font-size:28px;line-height:1;letter-spacing:0.5px;text-transform:uppercase;color:#fff}
-.kit-name b{color:var(--accent);font-family:'Black Han Sans',sans-serif;font-weight:400}
-.kit-price{font-size:28px;font-weight:900;color:#fbbf24;text-align:right;min-width:110px}
-.kit-price small{display:block;font-size:11px;color:#8a7a8a;margin-top:2px}
+.kit-name{font-family:'Black Han Sans',sans-serif;font-size:26px;line-height:1;text-transform:uppercase;color:#fff;letter-spacing:0.5px}
+.kit-name b{font-family:'Black Han Sans',sans-serif;font-weight:400;color:var(--accent)}
+.meta-row{display:flex;gap:8px;margin-top:10px;flex-wrap:wrap}
+.tag{font-size:10px;font-weight:900;padding:6px 11px;border-radius:20px;background:rgba(255,255,255,0.07);border:1px solid rgba(255,255,255,0.1);color:#d4b8c8}
+.tag.main{background:var(--accent);color:#000;border-color:var(--accent)}
+.kit-price{font-size:26px;font-weight:900;color:#fbbf24;text-align:right;min-width:115px;flex-shrink:0}
+.kit-price small{display:block;font-size:11px;color:#8a7a8a}
 
-.meta-row{display:flex;gap:8px;margin:12px 0 10px;flex-wrap:wrap}
-.tag{font-size:10px;font-weight:900;padding:6px 12px;border-radius:20px;background:rgba(255,255,255,0.06);border:1px solid rgba(255,255,255,0.08);color:#c9b0c0;letter-spacing:0.5px}
-.tag.main{background:var(--accent);color:#000;border-color:var(--accent);box-shadow:0 0 12px var(--accent)}
+.actions{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:16px}
+.btn-ver{padding:13px;border:1px solid rgba(255,255,255,0.15);background:rgba(0,0,0,0.3);color:#d8b4fe;border-radius:11px;font-weight:900;font-size:12px;cursor:pointer}
+.btn-buy{padding:13px;background:var(--accent);color:#000;border:none;border-radius:11px;font-weight:900;font-size:12px;cursor:pointer;text-align:center;text-decoration:none}
 
-.kit-desc{font-size:14px;color:#b8a0b8;line-height:1.4;margin-top:2px}
-.actions{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:18px}
-.btn-ver{padding:14px;border:1px solid rgba(255,255,255,0.12);background:rgba(0,0,0,0.3);color:#d8b4fe;border-radius:12px;font-weight:900;font-size:13px;cursor:pointer;letter-spacing:0.5px}
-.btn-buy{padding:14px;background:var(--accent);color:#000;border:none;border-radius:12px;font-weight:900;font-size:13px;cursor:pointer;text-align:center;text-decoration:none;letter-spacing:0.5px;box-shadow:0 8px 20px rgba(0,0,0,0.3)}
-
-.ip-box{max-width:880px;margin:30px auto 14px;background:rgba(18,8,14,0.95);border:1px solid rgba(255,255,255,0.06);border-radius:16px;padding:16px}
+.ip-box{max-width:980px;margin:30px auto 14px;background:#1a0e16;border:1px solid rgba(255,255,255,0.08);border-radius:16px;padding:16px}
 .ip-title{text-align:center;color:#f87171;font-weight:800;font-size:11px;letter-spacing:3px}
-.ip-line{display:flex;justify-content:space-between;align-items:center;background:#0c0509;padding:13px 14px;border-radius:10px;margin-top:10px;border:1px solid rgba(255,255,255,0.06);font-family:monospace;font-size:13px}
-.warn{max-width:880px;margin:16px auto;background:#2a0a0a;border:1px solid #5a1a1a;border-radius:12px;padding:14px;text-align:center;color:#fecaca;font-size:13px;font-weight:700}
-
+.ip-line{display:flex;justify-content:space-between;align-items:center;background:#0c0509;padding:13px 14px;border-radius:10px;margin-top:10px;border:1px solid rgba(255,255,255,0.08);font-family:monospace;font-size:14px}
+.warn{max-width:980px;margin:16px auto;background:#2a0a0a;border:1px solid #5a1a1a;border-radius:12px;padding:14px;text-align:center;color:#fecaca;font-size:13px;font-weight:700}
+.toast{position:fixed;bottom:20px;left:50%;transform:translateX(-50%);background:#fbbf24;color:#000;padding:10px 18px;border-radius:10px;font-weight:900;font-size:13px;display:none;z-index:1000}
 .modal{display:none;position:fixed;inset:0;background:rgba(0,0,0,0.85);backdrop-filter:blur(12px);z-index:999;align-items:center;justify-content:center;padding:20px}
 .modal.active{display:flex}
-.modal-box{background:#1a0e16;border:1px solid rgba(255,255,255,0.1);border-radius:20px;padding:24px;max-width:420px;width:100%;text-align:center}
+.modal-box{background:#1a0e16;border:1px solid rgba(255,255,255,0.12);border-radius:20px;padding:24px;max-width:420px;width:100%;text-align:center}
 </style>
 </head>
 <body>
@@ -63,8 +61,8 @@ body{background:#07040a;color:white;font-family:'Inter',sans-serif;padding:10px;
 </div>
 
 <div class="tabs">
-<button class="tab-btn active" onclick="showTab('rangos',this)">RANGOS</button>
-<button class="tab-btn" onclick="showTab('unbans',this)">UNBANS</button>
+<button class="tab-btn active" id="btn-rangos" onclick="showTab('rangos',this)">RANGOS</button>
+<button class="tab-btn" id="btn-unbans" onclick="showTab('unbans',this)">UNBANS</button>
 </div>
 
 <div id="rangos" class="list-box active"></div>
@@ -72,64 +70,66 @@ body{background:#07040a;color:white;font-family:'Inter',sans-serif;padding:10px;
 
 <div class="ip-box">
 <div class="ip-title">TEMPORADA 3</div>
-<div class="ip-line"><span>209.133.215.154</span><button onclick="copy('209.133.215.154')" style="background:#dc2626;color:white;border:none;padding:7px 12px;border-radius:8px;font-weight:800">COPIAR IP</button></div>
-<div class="ip-line"><span>50063</span><button onclick="copy('50063')" style="background:#dc2626;color:white;border:none;padding:7px 12px;border-radius:8px;font-weight:800">COPIAR PUERTO</button></div>
+<div class="ip-line"><span id="ip">209.133.215.154</span><button onclick="copyIP('209.133.215.154')" style="background:#dc2626;color:white;border:none;padding:8px 14px;border-radius:8px;font-weight:800;cursor:pointer">COPIAR IP</button></div>
+<div class="ip-line"><span id="port">50063</span><button onclick="copyIP('50063')" style="background:#dc2626;color:white;border:none;padding:8px 14px;border-radius:8px;font-weight:800;cursor:pointer">COPIAR PUERTO</button></div>
 </div>
 
 <div class="warn">⛔ ADVERTENCIA: Los rangos solo se hacen con <b>jereklein</b>. No pagues a nadie más.</div>
+<div class="toast" id="toast"></div>
 
 <div class="modal" id="modal" onclick="if(event.target==this)closeModal()">
 <div class="modal-box" id="mBox">
-<div style="font-size:64px" id="mIcon">👑</div>
-<div style="font-family:'Black Han Sans';font-size:26px;margin:8px 0" id="mTitle"></div>
-<div style="color:#fbbf24;font-size:22px;font-weight:900" id="mPrice"></div>
+<div style="font-size:60px" id="mIcon">👑</div>
+<div style="font-family:'Black Han Sans';font-size:24px;margin:8px 0" id="mTitle"></div>
+<div style="color:#fbbf24;font-size:20px;font-weight:900" id="mPrice"></div>
 <div id="mList" style="margin-top:12px;text-align:left"></div>
-<a href="https://discord.gg/Py2YZaG8sW" target="_blank" style="display:block;width:100%;background:linear-gradient(90deg,#dc2626,#a855f7);color:white;padding:14px;border-radius:10px;font-weight:900;margin-top:14px;text-decoration:none">COMPRAR EN DISCORD</a>
+<a href="https://discord.gg/Py2YZaG8sW" target="_blank" style="display:block;width:100%;background:linear-gradient(90deg,#dc2626,#a855f7);color:white;padding:13px;border-radius:10px;font-weight:900;margin-top:14px;text-decoration:none">COMPRAR EN DISCORD</a>
 <button style="width:100%;background:transparent;border:1px solid #2a1a2a;color:#9ca3af;padding:11px;border-radius:10px;margin-top:8px" onclick="closeModal()">CERRAR</button>
 </div>
 </div>
 
 <script>
 const rangos=[
-{icon:'👑',name:'KIT PERSONALIZADO',accent:'#fbbf24',price:'$25',desc:'El mejor de todos • Todo a tu elección • Armadura, filo y kit único creado para vos',tags:['MEJOR KIT','PERSONALIZABLE','2 TEMP'],stats:['Rango Personalizado','Armadura a elección','Filo a elección','Kit único personalizado','2 temporadas']},
-{icon:'☄️',name:'KIT ASTRAL',accent:'#ff4de1',price:'$14',desc:'Rango Astral • Protección 18 • Filo 18 • Kit diario + 20 Millones cada 24h',tags:['POPULAR','PROT 18','20M/DIA'],stats:['Rango Astral','Protección 18','Filo 18','20M cada día']},
-{icon:'🌌',name:'KIT QUASAR',accent:'#a78bfa',price:'$8',desc:'Poder Galáctico • Protección 16 • Filo 16 • 15 Millones cada 24h',tags:['EQUILIBRADO','PROT 16','15M/DIA'],stats:['Rango Quasar','Protección 16','Filo 16','15M cada día']},
-{icon:'💫',name:'KIT NOVA',accent:'#38bdf8',price:'$4',desc:'Explosión Estelar • Protección 14 • Filo 14 • Ideal para empezar',tags:['STARTER','PROT 14','10M/DIA'],stats:['Rango Nova','Protección 14','Filo 14','10M cada día']},
+{icon:'👑',name:'KIT PERSONALIZADO',accent:'#fbbf24',price:'$25',tags:['MEJOR KIT','PERSONALIZABLE','2 TEMP'],stats:['Rango Personalizado','Armadura a elección','Filo a elección','Kit único']},
+{icon:'☄️',name:'KIT ASTRAL',accent:'#ff4de1',price:'$14',tags:['POPULAR','PROT 18','20M/DIA'],stats:['Rango Astral','Prot 18','Filo 18','20M cada día']},
+{icon:'🌌',name:'KIT QUASAR',accent:'#a78bfa',price:'$8',tags:['EQUILIBRADO','PROT 16','15M/DIA'],stats:['Rango Quasar','Prot 16','Filo 16','15M cada día']},
+{icon:'💫',name:'KIT NOVA',accent:'#38bdf8',price:'$4',tags:['STARTER','PROT 14','10M/DIA'],stats:['Rango Nova','Prot 14','Filo 14','10M cada día']},
 ];
 const unbans=[
-{icon:'🔓',name:'UNBAN 30 DIAS',accent:'#22c55e',price:'$2',desc:'Desbaneo temporal por 30 días',tags:['TEMPORAL'],stats:['Desbaneo 30 días']},
-{icon:'♾️',name:'UNBAN PERMA',accent:'#06b6d4',price:'$6',desc:'Desbaneo permanente para siempre',tags:['PERMANENTE'],stats:['Desbaneo permanente']},
+{icon:'🔓',name:'UNBAN 30 DIAS',accent:'#22c55e',price:'$2',tags:['TEMPORAL'],stats:['Desbaneo 30 días']},
+{icon:'♾️',name:'UNBAN PERMA',accent:'#06b6d4',price:'$6',tags:['PERMANENTE'],stats:['Desbaneo permanente']},
 ];
 function render(){
 document.getElementById('rangos').innerHTML=rangos.map((k,i)=>`
 <div class="kit-row" style="--accent:${k.accent}">
 <div class="top">
 <div class="kit-icon">${k.icon}</div>
-<div class="kit-info">
-<div class="kit-name"><b style="color:${k.accent}">${k.name}</b></div>
-<div class="meta-row">${k.tags.map((t,j)=>`<span class="tag ${j==0?'main':''}" style="${j==0?`background:${k.accent}`:''}">${t}</span>`).join('')}</div>
-<div class="kit-desc">${k.desc}</div>
-</div>
+<div class="kit-info"><div class="kit-name"><b>${k.name}</b></div><div class="meta-row">${k.tags.map((t,j)=>`<span class="tag ${j==0?'main':''}" style="${j==0?`background:${k.accent}`:''}">${t}</span>`).join('')}</div></div>
 <div class="kit-price">${k.price}<small>USD</small></div>
 </div>
-<div class="actions">
-<button class="btn-ver" onclick="openR(${i})">VER</button>
-<a class="btn-buy" style="background:${k.accent}" href="https://discord.gg/Py2YZaG8sW" target="_blank">COMPRAR</a>
-</div>
+<div class="actions"><button class="btn-ver" onclick="openR(${i})">VER</button><a class="btn-buy" style="background:${k.accent}" href="https://discord.gg/Py2YZaG8sW" target="_blank">COMPRAR</a></div>
 </div>`).join('');
 document.getElementById('unbans').innerHTML=unbans.map((k,i)=>`
 <div class="kit-row" style="--accent:${k.accent}">
-<div class="top">
-<div class="kit-icon">${k.icon}</div>
-<div class="kit-info"><div class="kit-name"><b style="color:${k.accent}">${k.name}</b></div><div class="meta-row">${k.tags.map(t=>`<span class="tag">${t}</span>`).join('')}</div><div class="kit-desc">${k.desc}</div></div>
-<div class="kit-price">${k.price}<small>USD</small></div>
-</div>
+<div class="top"><div class="kit-icon">${k.icon}</div><div class="kit-info"><div class="kit-name"><b>${k.name}</b></div><div class="meta-row">${k.tags.map(t=>`<span class="tag">${t}</span>`).join('')}</div></div><div class="kit-price">${k.price}<small>USD</small></div></div>
 <div class="actions"><button class="btn-ver" onclick="openU(${i})">VER</button><a class="btn-buy" style="background:${k.accent}" href="https://discord.gg/Py2YZaG8sW" target="_blank">COMPRAR</a></div>
 </div>`).join('');
 }
 render();
-function showTab(id,btn){document.querySelectorAll('.list-box').forEach(g=>g.classList.remove('active'));document.querySelectorAll('.tab-btn').forEach(b=>b.classList.remove('active'));document.getElementById(id).classList.add('active');btn.classList.add('active')}
-function copy(t){navigator.clipboard.writeText(t);alert('Copiado: '+t)}
+function showTab(id,btn){
+document.getElementById('rangos').style.display=id==='rangos'?'flex':'none';
+document.getElementById('unbans').style.display=id==='unbans'?'flex':'none';
+document.querySelectorAll('.tab-btn').forEach(b=>b.classList.remove('active'));
+btn.classList.add('active');
+}
+function copyIP(text){
+  var ta=document.createElement('textarea'); ta.value=text; ta.style.position='fixed'; ta.style.opacity='0'; document.body.appendChild(ta); ta.select();
+  try{document.execCommand('copy'); showToast('Copiado: '+text);}catch(e){navigator.clipboard.writeText(text).then(()=>showToast('Copiado: '+text));}
+  document.body.removeChild(ta);
+}
+function showToast(msg){
+  var t=document.getElementById('toast'); t.innerText=msg; t.style.display='block'; setTimeout(()=>t.style.display='none',2000);
+}
 function openR(i){open(rangos[i])}
 function openU(i){open(unbans[i])}
 function open(k){document.getElementById('mIcon').innerText=k.icon;document.getElementById('mTitle').innerText=k.name;document.getElementById('mPrice').innerText=k.price+' USD';document.getElementById('mBox').style.borderColor=k.accent;document.getElementById('mList').innerHTML=k.stats.map(x=>'<div style="padding:9px 0;border-bottom:1px solid rgba(255,255,255,0.06)">✔️ '+x+'</div>').join('');document.getElementById('modal').classList.add('active')}
