@@ -6,49 +6,42 @@
 <title>Astral SMP</title>
 <style>
 *{margin:0;padding:0;box-sizing:border-box}
-body{background:#0e0507;color:white;font-family:sans-serif;padding:12px;position:relative;overflow-x:hidden;min-height:100vh}
-.bg{position:fixed;inset:0;z-index:-1;background:linear-gradient(180deg,#1a080a 0%,#2a0a0e 40%,#3a1015 100%)}
-.blob{position:fixed;border-radius:50%;filter:blur(60px);opacity:0.7;animation:float 9s infinite ease-in-out}
-.b1{width:400px;height:400px;background:radial-gradient(circle,#7f1d1d,#991b1b);top:-100px;left:-100px}
-.b2{width:350px;height:350px;background:radial-gradient(circle,#a855f7,#7c3aed);bottom:-80px;right:-80px;opacity:0.35}
-.b3{width:300px;height:300px;background:radial-gradient(circle,#dc2626,#7f1d1d);top:50%;left:50%;animation-delay:3s}
-@keyframes float{0%,100%{transform:translate(0,0) scale(1)}50%{transform:translate(25px,-25px) scale(1.15)}}
-
+body{background:#0a060e;color:white;font-family:sans-serif;padding:10px;min-height:100vh;position:relative;overflow-x:hidden}
+.bg{position:fixed;inset:0;z-index:-1;background:radial-gradient(ellipse at top,#2a0a1a 0%,#150810 40%,#0a050f 100%)}
+.blob{position:fixed;border-radius:50%;filter:blur(70px);opacity:0.6;animation:float 10s infinite ease-in-out}
+.b1{width:500px;height:500px;background:radial-gradient(circle,#7f1d1d 0%,#4c1d95 100%);top:-120px;left:-150px}
+.b2{width:400px;height:400px;background:radial-gradient(circle,#a855f7 0%,#dc2626 100%);bottom:-100px;right:-100px}
+.b3{width:300px;height:300px;background:radial-gradient(circle,#ff3366,#7c3aed);top:45%;left:50%;opacity:0.35}
+@keyframes float{0%,100%{transform:translate(0,0) scale(1)}50%{transform:translate(25px,-20px) scale(1.2)}}
 .header{text-align:center;margin:25px 0 10px}
-.header h1{font-size:52px;font-weight:900;letter-spacing:8px;color:#ffdde0;text-shadow:0 0 15px #dc2626,0 0 35px #a855f7,0 0 70px #7f1d1d;animation:titleGlow 1.8s infinite alternate}
-@keyframes titleGlow{from{text-shadow:0 0 10px #dc2626,0 0 20px #7c3aed}to{text-shadow:0 0 25px #ff4444,0 0 50px #a855f7,0 0 80px #dc2626}}
-
-.tabs{max-width:800px;margin:20px auto;display:flex;gap:10px}
-.tab-btn{flex:1;padding:14px;border-radius:14px;border:1px solid #3a1a1a;background:rgba(20,8,10,0.8);backdrop-filter:blur(10px);color:#9ca3af;font-weight:800;cursor:pointer;transition:0.2s}
-.tab-btn.active{background:linear-gradient(90deg,#dc2626,#a855f7);color:white;box-shadow:0 0 25px rgba(220,38,38,0.5);border-color:#ef4444;transform:scale(1.05)}
-
-.grid{display:none;max-width:1100px;margin:0 auto;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:18px}
-.grid.active{display:grid}
-
-.card{background:linear-gradient(180deg,rgba(35,15,20,0.9),rgba(18,8,12,0.95));border:1px solid #3a1a1a;border-radius:22px;padding:14px;backdrop-filter:blur(12px);cursor:pointer;transition:all 0.2s ease;position:relative}
-.card:hover{transform:translateY(-4px);box-shadow:0 15px 35px rgba(220,38,38,0.25);border-color:var(--accent)}
-.card:active{transform:scale(0.94) rotate(1deg)}
-.card-top{height:120px;background:radial-gradient(circle at center,rgba(60,20,25,0.8),rgba(15,5,8,0.9));border-radius:16px;display:flex;align-items:center;justify-content:center;border:1px solid #2a1515;position:relative;overflow:hidden}
-.card-icon{font-size:62px;filter:drop-shadow(0 0 20px var(--accent));transition:0.3s}
-.card:active .card-icon{transform:scale(1.3) rotate(15deg)}
-.card-name{font-size:28px;font-weight:900;text-align:center;margin:14px 0 2px;letter-spacing:3px;color:var(--accent);text-shadow:0 0 15px var(--accent);animation:rankPulse 2s infinite alternate}
-@keyframes rankPulse{from{opacity:0.8}to{opacity:1;text-shadow:0 0 25px var(--accent)}}
-.card-sub{color:#f9a8d4;font-size:13px;font-weight:700;text-align:center}
-.card-price{font-size:32px;font-weight:900;margin:8px 0;text-align:left}
-.card-price small{font-size:11px;color:#9ca3af}
-.list{list-style:none}
-.list li{padding:9px 2px;border-bottom:1px solid #2a1515;font-size:13px;color:#e5c9c9;display:flex;gap:8px}
-.btn-ver{width:100%;background:transparent;border:1px solid var(--accent);color:var(--accent);padding:13px;border-radius:12px;font-weight:800;font-size:13px;margin-top:12px;cursor:pointer;transition:0.2s;box-shadow:0 0 15px rgba(0,0,0,0.3)}
-.btn-ver:active{background:var(--accent);color:white;transform:scale(0.95)}
-
-.ip-box{max-width:800px;margin:25px auto 10px;background:rgba(20,8,10,0.9);border:1px solid #3a1a1a;border-radius:14px;padding:16px;text-align:center;backdrop-filter:blur(10px)}
-.ip-line{display:flex;justify-content:space-between;align-items:center;background:#0e0507;padding:12px;border-radius:10px;margin-top:8px;border:1px solid #2a1515}
-.warn{max-width:800px;margin:20px auto 10px;background:linear-gradient(90deg,#450a0a,#7f1d1d);border:2px solid #ef4444;border-radius:12px;padding:16px;text-align:center;color:#fecaca;font-size:14px;font-weight:800;box-shadow:0 0 30px rgba(239,68,68,0.6);animation:warnBeat 0.9s infinite alternate}
-@keyframes warnBeat{0%{transform:scale(1);box-shadow:0 0 20px rgba(239,68,68,0.4)}100%{transform:scale(1.03);box-shadow:0 0 40px rgba(239,68,68,0.9)}}
-
+.header h1{font-size:54px;font-weight:900;letter-spacing:8px;text-shadow:0 0 10px #dc2626,0 0 35px #a855f7,0 0 70px #7f1d1d;animation:titleGlow 1.6s infinite alternate}
+@keyframes titleGlow{from{text-shadow:0 0 10px #dc2626,0 0 20px #a855f7}to{text-shadow:0 0 25px #ff4444,0 0 50px #c084fc}}
+.tabs{max-width:850px;margin:15px auto;display:flex;gap:10px}
+.tab-btn{flex:1;padding:13px;border-radius:14px;border:1px solid #2a1a2a;background:rgba(20,8,15,0.8);color:#9ca3af;font-weight:800;cursor:pointer}
+.tab-btn.active{background:linear-gradient(90deg,#dc2626,#a855f7);color:white;box-shadow:0 0 20px rgba(220,38,38,0.5)}
+.list-box{max-width:850px;margin:0 auto;display:none;flex-direction:column;gap:12px}
+.list-box.active{display:flex}
+.kit-row{display:flex;align-items:center;gap:14px;padding:14px 16px;background:linear-gradient(90deg,rgba(40,15,22,0.9),rgba(25,10,30,0.9));border:1px solid #2a1a2a;border-radius:18px;backdrop-filter:blur(12px);cursor:pointer;transition:0.2s;position:relative}
+.kit-row::before{content:'';position:absolute;left:0;top:0;bottom:0;width:4px;background:var(--accent);box-shadow:0 0 15px var(--accent)}
+.kit-row:active{transform:scale(0.97)}
+.kit-row:hover{transform:translateX(4px);border-color:var(--accent)}
+.kit-icon{width:68px;height:68px;background:radial-gradient(circle,rgba(255,255,255,0.08),rgba(0,0,0,0.5));border:1px solid var(--accent);border-radius:14px;display:flex;align-items:center;justify-content:center;font-size:34px;flex-shrink:0;box-shadow:0 0 20px var(--accent)}
+.kit-info{flex:1;min-width:0}
+.kit-name{font-size:18px;font-weight:900;color:var(--accent);text-shadow:0 0 10px var(--accent);animation:rankPulse 2s infinite alternate}
+@keyframes rankPulse{from{opacity:0.8}to{opacity:1}}
+.kit-desc{font-size:11px;color:#9ca3af;margin-top:3px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.kit-price{font-size:17px;font-weight:900;color:#fbbf24;min-width:80px;text-align:right}
+.kit-actions{display:flex;flex-direction:column;gap:6px;flex-shrink:0;width:110px}
+.btn-ver{padding:8px;border:1px solid var(--accent);color:var(--accent);background:rgba(0,0,0,0.3);border-radius:9px;font-weight:800;font-size:11px;cursor:pointer}
+.btn-buy{padding:9px;background:var(--accent);color:white;border:none;border-radius:9px;font-weight:900;font-size:11px;cursor:pointer;text-decoration:none;text-align:center;box-shadow:0 0 15px var(--accent)}
+.btn-buy:active,.btn-ver:active{transform:scale(0.92)}
+.ip-box{max-width:850px;margin:25px auto 10px;background:rgba(20,8,15,0.9);border:1px solid #2a1a2a;border-radius:14px;padding:14px;text-align:center}
+.ip-line{display:flex;justify-content:space-between;align-items:center;background:#0a0508;padding:12px;border-radius:10px;margin-top:8px;border:1px solid #2a1a2a}
+.warn{max-width:850px;margin:18px auto;background:linear-gradient(90deg,#450a0a,#7f1d1d);border:2px solid #ef4444;border-radius:12px;padding:15px;text-align:center;color:#fecaca;font-size:14px;font-weight:800;animation:warnBeat 0.9s infinite alternate}
+@keyframes warnBeat{from{transform:scale(1)}to{transform:scale(1.03);box-shadow:0 0 40px rgba(239,68,68,0.9)}}
 .modal{display:none;position:fixed;inset:0;background:rgba(0,0,0,0.85);backdrop-filter:blur(12px);z-index:999;align-items:center;justify-content:center;padding:20px}
 .modal.active{display:flex}
-.modal-box{background:linear-gradient(180deg,#231014,#12080a);border:2px solid var(--accent,#a855f7);border-radius:20px;padding:22px;max-width:400px;width:100%;text-align:center;box-shadow:0 0 40px var(--accent);animation:pop 0.3s}
+.modal-box{background:linear-gradient(180deg,#231014,#12080a);border:2px solid var(--accent,#a855f7);border-radius:20px;padding:22px;max-width:420px;width:100%;text-align:center;animation:pop 0.3s}
 @keyframes pop{from{transform:scale(0.7);opacity:0}to{transform:scale(1);opacity:1}}
 </style>
 </head>
@@ -62,100 +55,74 @@ body{background:#0e0507;color:white;font-family:sans-serif;padding:12px;position
 <button class="tab-btn" onclick="showTab('unbans',this)">UNBANS</button>
 </div>
 
-<div id="rangos" class="grid active">
-
-<div class="card" style="--accent:gold" onclick="openModal(0)">
-<div class="card-top"><div class="card-icon">☄️</div></div>
-<div class="card-name">KIT ASTRAL</div>
-<div class="card-sub">El mejor Kit</div>
-<div class="card-price">$25 <small>USD</small></div>
-<ul class="list"><li>👑 Rango Astral en el servidor</li><li>🛡️ Armadura a elección</li><li>⚔️ Afilado a elección</li><li>📦 Kit único personalizado</li><li>⏳ Máximo 2 temporadas</li></ul>
-<button class="btn-ver">Ver detalles +</button>
-</div>
-
-<div class="card" style="--accent:#a78bfa" onclick="openModal(1)">
-<div class="card-top"><div class="card-icon">🌌</div></div>
-<div class="card-name">KIT QUASAR</div>
-<div class="card-sub">Poder Galáctico</div>
-<div class="card-price">$14 <small>USD</small></div>
-<ul class="list"><li>🏷️ Rango Quasar</li><li>🛡️ Protección 18</li><li>⚔️ Afilado 18</li><li>💰 20M cada 1 día</li><li>⏳ Máximo 2 temporadas</li></ul>
-<button class="btn-ver">Ver detalles +</button>
-</div>
-
-<div class="card" style="--accent:#38bdf8" onclick="openModal(2)">
-<div class="card-top"><div class="card-icon">💫</div></div>
-<div class="card-name">KIT NOVA</div>
-<div class="card-sub">Explosión Estelar</div>
-<div class="card-price">$8 <small>USD</small></div>
-<ul class="list"><li>🏷️ Rango Nova</li><li>🛡️ Protección 16</li><li>⚔️ Afilado 16</li><li>💰 15M cada 1 día</li><li>⏳ Máximo 2 temporadas</li></ul>
-<button class="btn-ver">Ver detalles +</button>
-</div>
-
-<div class="card" style="--accent:#34d399" onclick="openModal(3)">
-<div class="card-top"><div class="card-icon">🐍</div></div>
-<div class="card-name">MEDUSA</div>
-<div class="card-sub">Kit Medusa</div>
-<div class="card-price">$4 <small>USD</small></div>
-<ul class="list"><li>🏷️ Rango Medusa</li><li>🛡️ Protección 14</li><li>⚔️ Afilado 14</li><li>💰 10M cada 1 día</li></ul>
-<button class="btn-ver">Ver detalles +</button>
-</div>
-
-<div class="card" style="--accent:#ff41ff" onclick="openModal(4)">
-<div class="card-top"><div class="card-icon">🚀</div></div>
-<div class="card-name">BOOSTER</div>
-<div class="card-sub">Recompensa Discord</div>
-<div class="card-price">GRATIS <small>2 BOOSTS</small></div>
-<ul class="list"><li>🏷️ Rango Booster</li><li>🛡️ Protección 13</li><li>⚔️ Afilado 13</li><li>💰 1.5M cada día</li></ul>
-<button class="btn-ver">Ver detalles +</button>
-</div>
-
-</div>
-
-<div id="unbans" class="grid">
-<div class="card" style="--accent:#22c55e" onclick="openModal(5)"><div class="card-top"><div class="card-icon">🔓</div></div><div class="card-name">UNBAN 30D</div><div class="card-sub">Temporal</div><div class="card-price">$2 <small>USD</small></div><ul class="list"><li>✅ 30 días</li></ul><button class="btn-ver">Ver detalles +</button></div>
-<div class="card" style="--accent:#06b6d4" onclick="openModal(6)"><div class="card-top"><div class="card-icon">♾️</div></div><div class="card-name">PERMA</div><div class="card-sub">Permanente</div><div class="card-price">$6 <small>USD</small></div><ul class="list"><li>♾️ Para siempre</li></ul><button class="btn-ver">Ver detalles +</button></div>
-</div>
+<div id="rangos" class="list-box active"></div>
+<div id="unbans" class="list-box"></div>
 
 <div class="ip-box">
-<div style="color:#f87171;font-weight:800;font-size:11px;letter-spacing:2px">CONECTATE</div>
+<div style="color:#f87171;font-weight:800;font-size:11px;letter-spacing:2px">TEMPORADA 3</div>
 <div class="ip-line"><span style="font-family:monospace">209.133.215.154</span><button onclick="copy('209.133.215.154')" style="background:#dc2626;color:white;border:none;padding:6px 12px;border-radius:8px;font-weight:700">COPIAR IP</button></div>
 <div class="ip-line"><span style="font-family:monospace">50063</span><button onclick="copy('50063')" style="background:#dc2626;color:white;border:none;padding:6px 12px;border-radius:8px;font-weight:700">COPIAR PUERTO</button></div>
 </div>
 
-<div class="warn">⛔ ADVERTENCIA: Los rangos solo se hacen con <b>jereklein</b>. No pagues a nadie más. Si te estafan no es culpa de Astral.</div>
+<div class="warn">⛔ ADVERTENCIA: Los rangos solo se hacen con <b>jereklein</b>. No pagues a nadie más.</div>
 
 <div class="modal" id="modal" onclick="if(event.target==this)closeModal()">
 <div class="modal-box" id="mBox">
-<div style="font-size:60px" id="mIcon">☄️</div>
-<div style="font-size:24px;font-weight:900;margin:10px 0;letter-spacing:2px" id="mTitle">KIT ASTRAL</div>
-<div id="mList"></div>
-<a id="mDiscord" href="https://discord.gg/Py2YZaG8sW" target="_blank" style="display:block;width:100%;background:#dc2626;color:white;padding:14px;border-radius:12px;font-weight:900;margin-top:14px;text-decoration:none">COMPRAR EN DISCORD</a>
-<button style="width:100%;background:transparent;border:1px solid #3a1a1a;color:#9ca3af;padding:12px;border-radius:12px;margin-top:8px" onclick="closeModal()">CERRAR</button>
+<div style="font-size:64px" id="mIcon">👑</div>
+<div style="font-size:26px;font-weight:900;margin:8px 0" id="mTitle"></div>
+<div style="color:#fbbf24;font-size:22px;font-weight:900" id="mPrice"></div>
+<div id="mList" style="margin-top:12px"></div>
+<a href="https://discord.gg/Py2YZaG8sW" target="_blank" style="display:block;width:100%;background:linear-gradient(90deg,#dc2626,#a855f7);color:white;padding:14px;border-radius:12px;font-weight:900;margin-top:14px;text-decoration:none">COMPRAR EN DISCORD</a>
+<button style="width:100%;background:transparent;border:1px solid #2a1a2a;color:#9ca3af;padding:12px;border-radius:12px;margin-top:8px" onclick="closeModal()">CERRAR</button>
 </div>
 </div>
 
 <script>
-const kits=[
-{icon:'☄️',name:'KIT ASTRAL',color:'gold',price:'$25 USD',list:['👑 Rango Astral','🛡️ Armadura a elección','⚔️ Afilado a elección','📦 Kit único personalizado','⏳ Máximo 2 temporadas']},
-{icon:'🌌',name:'KIT QUASAR',color:'#a78bfa',price:'$14 USD',list:['🏷️ Rango Quasar','🛡️ Protección 18','⚔️ Filo 18','💰 20M cada día','⏳ Máximo 2 temporadas']},
-{icon:'💫',name:'KIT NOVA',color:'#38bdf8',price:'$8 USD',list:['🏷️ Rango Nova','🛡️ Protección 16','⚔️ Filo 16','💰 15M cada día']},
-{icon:'🐍',name:'MEDUSA',color:'#34d399',price:'$4 USD',list:['🏷️ Rango Medusa','🛡️ Protección 14','⚔️ Filo 14','💰 10M cada día']},
-{icon:'🚀',name:'BOOSTER',color:'#ff41ff',price:'GRATIS',list:['🏷️ Rango Booster','🛡️ Protección 13','⚔️ Filo 13','Gratis x2 boosts']},
-{icon:'🔓',name:'UNBAN 30D',color:'#22c55e',price:'$2 USD',list:['✅ Desbaneo 30 días']},
-{icon:'♾️',name:'PERMA',color:'#06b6d4',price:'$6 USD',list:['♾️ Desbaneo para siempre']},
+const rangos=[
+{icon:'👑',name:'KIT PERSONALIZADO',desc:'Todo a elección • Kit único',price:'$25',accent:'gold',stats:['👑 Rango Personalizado','🛡️ Armadura a elección','⚔️ Afilado a elección','📦 Kit único personalizado','⏳ Máximo 2 temporadas']},
+{icon:'☄️',name:'KIT ASTRAL',desc:'Protección 18 • Filo 18 • 20M cada día',price:'$14',accent:'#ff41ff',stats:['🏷️ Rango Astral','🛡️ Protección 18','⚔️ Filo 18','💰 20M cada día','⏳ Máximo 2 temporadas']},
+{icon:'🌌',name:'KIT QUASAR',desc:'Protección 16 • Filo 16 • 15M cada día',price:'$8',accent:'#a78bfa',stats:['🏷️ Rango Quasar','🛡️ Protección 16','⚔️ Filo 16','💰 15M cada día']},
+{icon:'💫',name:'KIT NOVA',desc:'Protección 14 • Filo 14 • 10M cada día',price:'$4',accent:'#38bdf8',stats:['🏷️ Rango Nova','🛡️ Protección 14','⚔️ Filo 14','💰 10M cada día']},
 ];
-function showTab(id,btn){document.querySelectorAll('.grid').forEach(g=>g.classList.remove('active'));document.querySelectorAll('.tab-btn').forEach(b=>b.classList.remove('active'));document.getElementById(id).classList.add('active');btn.classList.add('active');if(navigator.vibrate) navigator.vibrate(30)}
-function copy(t){navigator.clipboard.writeText(t);alert('Copiado: '+t);if(navigator.vibrate) navigator.vibrate(50)}
-function openModal(i){
-const k=kits[i];
+const unbans=[
+{icon:'🔓',name:'UNBAN 30 DIAS',desc:'Desbaneo 30 días',price:'$2',accent:'#22c55e',stats:['✅ Desbaneo 30 días']},
+{icon:'♾️',name:'PERMA',desc:'Para siempre',price:'$6',accent:'#06b6d4',stats:['♾️ Desbaneo permanente']},
+];
+function render(){
+document.getElementById('rangos').innerHTML=rangos.map((k,i)=>`
+<div class="kit-row" style="--accent:${k.accent}">
+<div class="kit-icon">${k.icon}</div>
+<div class="kit-info"><div class="kit-name">${k.name}</div><div class="kit-desc">${k.desc}</div></div>
+<div class="kit-price">${k.price} USD</div>
+<div class="kit-actions">
+<button class="btn-ver" style="--accent:${k.accent}" onclick="openR(${i})">VER</button>
+<a class="btn-buy" style="background:${k.accent};${k.accent=='gold'?'color:black':''}" href="https://discord.gg/Py2YZaG8sW" target="_blank">COMPRAR</a>
+</div>
+</div>`).join('');
+document.getElementById('unbans').innerHTML=unbans.map((k,i)=>`
+<div class="kit-row" style="--accent:${k.accent}">
+<div class="kit-icon">${k.icon}</div>
+<div class="kit-info"><div class="kit-name">${k.name}</div><div class="kit-desc">${k.desc}</div></div>
+<div class="kit-price">${k.price} USD</div>
+<div class="kit-actions">
+<button class="btn-ver" style="--accent:${k.accent}" onclick="openU(${i})">VER</button>
+<a class="btn-buy" style="background:${k.accent}" href="https://discord.gg/Py2YZaG8sW" target="_blank">COMPRAR</a>
+</div>
+</div>`).join('');
+}
+render();
+function showTab(id,btn){document.querySelectorAll('.list-box').forEach(g=>g.classList.remove('active'));document.querySelectorAll('.tab-btn').forEach(b=>b.classList.remove('active'));document.getElementById(id).classList.add('active');btn.classList.add('active')}
+function copy(t){navigator.clipboard.writeText(t);alert('Copiado: '+t)}
+function openR(i){open(rangos[i])}
+function openU(i){open(unbans[i])}
+function open(k){
 document.getElementById('mIcon').innerText=k.icon;
 document.getElementById('mTitle').innerText=k.name;
-document.getElementById('mTitle').style.color=k.color;
-document.getElementById('mBox').style.borderColor=k.color;
-document.getElementById('mBox').style.boxShadow='0 0 40px '+k.color;
-document.getElementById('mList').innerHTML='<div style="font-size:20px;font-weight:900;color:#fbbf24;margin:10px 0">'+k.price+'</div>'+k.list.map(x=>'<div style="padding:9px;text-align:left;border-bottom:1px solid #2a1515">✔️ '+x+'</div>').join('');
+document.getElementById('mTitle').style.color=k.accent=='gold'?'#fbbf24':k.accent;
+document.getElementById('mPrice').innerText=k.price+' USD';
+document.getElementById('mBox').style.borderColor=k.accent=='gold'?'#fbbf24':k.accent;
+document.getElementById('mList').innerHTML=k.stats.map(x=>'<div style="padding:10px;text-align:left;border-bottom:1px solid #2a1a2a">✔️ '+x+'</div>').join('');
 document.getElementById('modal').classList.add('active');
-if(navigator.vibrate) navigator.vibrate(60);
 }
 function closeModal(){document.getElementById('modal').classList.remove('active')}
 </script>
