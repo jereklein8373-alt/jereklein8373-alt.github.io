@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Astral SMP - Tienda Oficial</title>
+<style>
+body{background:#0a0a0f;color:white;font-family:Arial;text-align:center;margin:0;padding:20px}
+h1{color:#a855f7;font-size:32px}
+.card{background:#1a1a25;border:2px solid #a855f7;border-radius:15px;padding:20px;margin:20px auto;max-width:300px}
+.price{font-size:28px;color:#facc15;font-weight:bold}
+.btn{background:#a855f7;color:white;padding:12px 25px;border-radius:10px;text-decoration:none;display:inline-block;margin-top:10px;font-weight:bold}
+.btn:hover{background:#9333ea}
+</style>
+</head>
+<body>
+<h1>✦ ASTRAL SMP ✦</h1>
+<p>Tienda Oficial de Astral SMP</p>
+
+<div class="card">
+<h2>VIP</h2>
+<p>Acceso a /fly en lobby, kit VIP</p>
+<div class="price">$1.500 ARS</div>
+<a class="btn" href="https://mpago.la/tu-link-vip">COMPRAR</a>
+</div>
+
+<div class="card">
+<h2>VIP+</h2>
+<p>Todo lo de VIP + ventajas exclusivas</p>
+<div class="price">$3.000 ARS</div>
+<a class="btn" href="https://mpago.la/tu-link-vipplus">COMPRAR</a>
+</div>
+
+<div class="card" style="border-color:#facc15">
+<h2>ORION</h2>
+<p>Rango más OP, todo desbloqueado</p>
+<div class="price">$5.500 ARS</div>
+<a class="btn" style="background:#facc15;color:black" href="https://mpago.la/tu-link-orion">COMPRAR</a>
+</div>
+
+<p style="margin-top:40px;color:#888">IP: play.astralsmp.com</p>
+</body>
+</html>
