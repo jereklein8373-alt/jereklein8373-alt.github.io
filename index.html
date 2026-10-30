@@ -3,39 +3,42 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Astral SMP - Tienda</title>
+<title>Astral SMP</title>
 <style>
 *{margin:0;padding:0;box-sizing:border-box}
-body{background:#0e0608;color:white;font-family:sans-serif;padding:12px}
+body{background:#0a0814;color:white;font-family:sans-serif;padding:12px}
 .header{text-align:center;margin:20px 0 10px}
-.header h1{font-size:36px;font-weight:900;color:#c084fc;letter-spacing:4px;text-shadow:0 0 15px #7c3aed}
-.warn{max-width:650px;margin:0 auto 15px;background:#450a0a;border:1px solid #dc2626;border-radius:10px;padding:12px;text-align:center;font-size:13px;font-weight:800;color:#fecaca}
-.ip-box{max-width:650px;margin:15px auto;background:#1a0f0f;border:1px solid #2a1212;border-radius:14px;padding:14px;text-align:center}
-.ip-line{display:flex;justify-content:space-between;align-items:center;background:#0e0608;padding:12px;border-radius:10px;margin-top:8px;border:1px solid #2a1212}
-.ip-text{font-family:monospace;font-weight:700;font-size:13px}
-.btn-copy{background:#dc2626;border:none;color:white;padding:6px 12px;border-radius:8px;font-weight:700;font-size:11px;cursor:pointer}
-.notice{max-width:650px;margin:10px auto;background:#1a0f0f;border:1px solid #2a1212;border-radius:20px;padding:8px;text-align:center;font-size:11px;color:#9ca3af}
+.header h1{font-size:40px;font-weight:900;color:#c084fc;letter-spacing:5px;text-shadow:0 0 20px #7c3aed}
+.warn{max-width:750px;margin:0 auto 15px;background:#450a0a;border:2px solid #ef4444;border-radius:10px;padding:12px;text-align:center;font-size:13px;font-weight:800;color:#fecaca}
+.shop-box{max-width:800px;margin:0 auto;background:#151223;border:1px solid #2a2450;border-radius:16px;overflow:hidden}
+.shop-head{padding:18px;background:#0f0d1a;border-bottom:1px solid #2a2450;display:flex;justify-content:space-between;align-items:center}
+.shop-head h2{font-size:20px;font-weight:900;letter-spacing:2px}
+.shop-sub{padding:10px 18px;color:#9ca3af;font-size:12px;background:#151223;border-bottom:1px solid #1e1840}
+.kit-row{display:flex;align-items:center;gap:16px;padding:18px;background:#1a182b;border-bottom:1px solid #1e1840;transition:0.15s}
+.kit-row:hover{background:#201e36}
+.kit-icon{width:68px;height:68px;background:#0f0d1a;border:2px solid var(--accent,#2a2450);border-radius:12px;display:flex;align-items:center;justify-content:center;font-size:34px;flex-shrink:0}
+.kit-info{flex:1;min-width:0}
+.kit-name{font-size:18px;font-weight:900;letter-spacing:1px}
+.kit-desc{font-size:12px;color:#9ca3af;margin-top:3px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.kit-price{font-size:18px;font-weight:900;color:#fbbf24;white-space:nowrap;margin-right:10px}
+.kit-actions{display:flex;gap:8px;flex-shrink:0}
+.btn{padding:10px 16px;border-radius:10px;font-weight:800;font-size:12px;border:none;cursor:pointer;text-decoration:none;text-align:center}
+.btn-view{background:#2a2450;color:#a78bfa;border:1px solid #4c1d95}
+.btn-buy{background:var(--accent,#a855f7);color:white}
+.btn-buy.boost{background:#ff41ff}
+.btn-buy.gold{background:gold;color:black}
+.ip-footer{max-width:800px;margin:20px auto;background:#151223;border:1px solid #2a2450;border-radius:14px;padding:16px;text-align:center}
+.ip-line{display:flex;justify-content:space-between;align-items:center;background:#0a0814;padding:14px;border-radius:10px;margin-top:8px;border:1px solid #2a2450}
+.ip-text{font-family:monospace;font-weight:700;font-size:14px}
+.btn-copy{background:#7c3aed;border:none;color:white;padding:7px 12px;border-radius:8px;font-weight:700;font-size:11px;cursor:pointer}
 
-/* ESTILO COMO LA FOTO */
-.card{max-width:650px;margin:0 auto 14px;background:linear-gradient(180deg,#1f1010,#130808);border:1px solid #2a1515;border-radius:18px;padding:14px;display:flex;gap:14px;position:relative;overflow:hidden}
-.card-left{width:75px;flex-shrink:0;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:6px}
-.card-left .icon{font-size:38px;filter:drop-shadow(0 0 10px rgba(255,255,255,0.2))}
-.card-left .label{font-size:8px;font-weight:900;letter-spacing:1px;text-align:center;color:#f87171;line-height:10px}
-.card-right{flex:1}
-.badge{display:inline-block;background:#2a1212;border:1px solid #3a1a1a;color:#f87171;font-size:10px;font-weight:800;padding:5px 12px;border-radius:20px;margin-bottom:10px;letter-spacing:0.5px}
-.badge-free{background:#1a0f1f;border-color:#3a1a4a;color:#c084fc}
-.card-title{font-size:18px;font-weight:900;letter-spacing:1px;margin-bottom:12px;display:flex;justify-content:space-between;align-items:center}
-.card-title span{font-size:10px;color:#f87171;font-weight:700}
-.list{list-style:none}
-.list li{font-size:13px;padding:5px 0;display:flex;gap:8px;align-items:center;color:#e5e7eb}
-.list li::before{content:'✔';color:#ef4444;font-weight:900;font-size:12px}
-.enc-box{margin-top:12px;background:#0e0608;border:1px solid #1f1515;border-radius:10px;padding:10px}
-.enc-title{font-size:12px;font-weight:800;display:flex;gap:5px}
-.enc-sub{font-size:11px;color:#9ca3af;margin-top:2px}
-.btn-discord{display:block;width:100%;margin-top:12px;background:#dc2626;color:white;text-align:center;padding:13px;border-radius:12px;font-weight:900;font-size:13px;letter-spacing:0.5px;text-decoration:none;border:none}
-.btn-discord:hover{background:#b91c1c}
-.price{font-size:11px;color:#fbbf24;margin-left:8px}
-.section-title{max-width:650px;margin:25px auto 12px;font-size:22px;font-weight:900;display:flex;gap:8px;align-items:center}
+/* MODAL */
+.modal{display:none;position:fixed;inset:0;background:rgba(0,0,0,0.85);z-index:999;align-items:center;justify-content:center;padding:20px}
+.modal.active{display:flex}
+.modal-box{background:#151223;border:2px solid var(--accent,#a855f7);border-radius:18px;padding:22px;max-width:400px;width:100%;text-align:center}
+.modal-icon{font-size:60px;margin-bottom:8px}
+.modal-list{text-align:left;margin:15px 0;background:#0a0814;border-radius:10px;padding:12px}
+.modal-item{padding:7px 0;border-bottom:1px solid #1e1840;font-size:13px;color:#d1c7ff}
 </style>
 </head>
 <body>
@@ -44,131 +47,67 @@ body{background:#0e0608;color:white;font-family:sans-serif;padding:12px}
 
 <div class="warn">⛔ ADVERTENCIA: Los rangos solo se hacen con <b>jereklein</b>. No pagues a nadie más.</div>
 
-<div class="notice">⏳ Los rangos duran un máximo de <b>2 temporadas</b></div>
-
-<!-- PERSONALIZADO -->
-<div class="card">
-<div class="card-left"><div class="icon">👑</div><div class="label">RANGO<br>SUPREMO</div></div>
-<div class="card-right">
-<div class="badge">RANGO PERSONALIZADO</div>
-<div class="card-title">PERSONALIZADO <span>$25 USD</span></div>
-<ul class="list">
-<li>🏷️ Rango en el servidor</li>
-<li>🛡️ Armadura a elección</li>
-<li>⚔️ Afilado a elección</li>
-<li>📦 Kit único personalizado</li>
-</ul>
-<div class="enc-box"><div class="enc-title">✨ Encantamientos</div><div class="enc-sub">Protección a elección · Filo a elección</div></div>
-<a class="btn-discord" href="https://discord.gg/Py2YZaG8sW" target="_blank">COMPRAR EN DISCORD</a>
-</div>
+<div class="shop-box">
+<div class="shop-head"><h2>⚔️ KIT SHOP</h2><span style="font-size:11px;color:#9ca3af">Rangos Astral • 2 temporadas</span></div>
+<div class="shop-sub">Elegí un kit para comprar • Entrega instantánea en el juego</div>
+<div id="kits"></div>
+<div style="padding:12px;text-align:center;font-size:11px;color:#6b7280;background:#0f0d1a">Usa /kit &lt;nombre&gt; para canjear • Kits cada 24h</div>
 </div>
 
-<!-- ANCESTRAL -->
-<div class="card">
-<div class="card-left"><div class="icon">💀</div><div class="label">RANGO<br>ANCESTRAL</div></div>
-<div class="card-right">
-<div class="badge">RANGO ANCESTRAL</div>
-<div class="card-title">ANCESTRAL <span>$14 USD</span></div>
-<ul class="list">
-<li>🏷️ Rango en el servidor</li>
-<li>🛡️ Armadura Protección 18</li>
-<li>⚔️ Afilado 18</li>
-<li>📦 Kit cada 1 día</li>
-<li>💰 20M cada 1 día</li>
-</ul>
-<div class="enc-box"><div class="enc-title">✨ Encantamientos</div><div class="enc-sub">Protección XVIII · Filo XVIII</div></div>
-<a class="btn-discord" href="https://discord.gg/Py2YZaG8sW" target="_blank">COMPRAR EN DISCORD</a>
-</div>
-</div>
-
-<!-- MISTICO -->
-<div class="card">
-<div class="card-left"><div class="icon">🔮</div><div class="label">RANGO<br>MISTICO</div></div>
-<div class="card-right">
-<div class="badge">RANGO MISTICO</div>
-<div class="card-title">MISTICO <span>$8 USD</span></div>
-<ul class="list">
-<li>🏷️ Rango en el servidor</li>
-<li>🛡️ Armadura Protección 16</li>
-<li>⚔️ Afilado 16</li>
-<li>📦 Kit cada 1 día</li>
-<li>💰 15M cada 1 día</li>
-</ul>
-<div class="enc-box"><div class="enc-title">✨ Encantamientos</div><div class="enc-sub">Protección XVI · Filo XVI</div></div>
-<a class="btn-discord" href="https://discord.gg/Py2YZaG8sW" target="_blank">COMPRAR EN DISCORD</a>
-</div>
-</div>
-
-<!-- MEDUSA -->
-<div class="card">
-<div class="card-left"><div class="icon">🐍</div><div class="label">RANGO<br>MEDUSA</div></div>
-<div class="card-right">
-<div class="badge">RANGO MEDUSA</div>
-<div class="card-title">MEDUSA <span>$4 USD</span></div>
-<ul class="list">
-<li>🏷️ Rango en el servidor</li>
-<li>🛡️ Armadura Protección 14</li>
-<li>⚔️ Afilado 14</li>
-<li>📦 Kit cada 1 día</li>
-<li>💰 10M cada 1 día</li>
-</ul>
-<div class="enc-box"><div class="enc-title">✨ Encantamientos</div><div class="enc-sub">Protección XIV · Filo XIV</div></div>
-<a class="btn-discord" href="https://discord.gg/Py2YZaG8sW" target="_blank">COMPRAR EN DISCORD</a>
-</div>
-</div>
-
-<!-- BOOSTER -->
-<div class="card" style="border-color:#3a1a4a">
-<div class="card-left"><div class="icon">🚀</div><div class="label">RECOMPENSA<br>DISCORD</div></div>
-<div class="card-right">
-<div class="card-title">KIT BOOSTER <span style="color:#c084fc">2 BOOSTS DISCORD</span></div>
-<div class="badge badge-free">RANGO BOOSTER</div>
-<ul class="list">
-<li>🏷️ Rango Booster en el servidor</li>
-<li>🛡️ Armadura Protección 13</li>
-<li>⚔️ Afilado 13</li>
-<li>📦 Kit cada 1 día</li>
-<li>💰 1.5M cada 1 día</li>
-</ul>
-<div class="enc-box"><div class="enc-title">✨ Encantamientos</div><div class="enc-sub">Protección XIII · Filo XIII</div></div>
-<a class="btn-discord" style="background:#7c3aed" href="https://discord.gg/Py2YZaG8sW" target="_blank">COMPRAR EN DISCORD</a>
-</div>
-</div>
-
-<div class="section-title">🔓 Unbans</div>
-
-<div class="card">
-<div class="card-left"><div class="icon">🔓</div><div class="label">UNBAN</div></div>
-<div class="card-right">
-<div class="badge">UNBAN 30 DIAS</div>
-<div class="card-title">UNBAN 30 DÍAS <span>$2 USD</span></div>
-<ul class="list"><li>✅ Desbaneo por 30 días</li><li>🎮 Vuelve a jugar</li></ul>
-<a class="btn-discord" href="https://discord.gg/Py2YZaG8sW" target="_blank">COMPRAR EN DISCORD</a>
-</div>
-</div>
-
-<div class="card">
-<div class="card-left"><div class="icon">♾️</div><div class="label">UNBAN<br>PERMA</div></div>
-<div class="card-right">
-<div class="badge">UNBAN PERMANENTE</div>
-<div class="card-title">PERMANENTE <span>$6 USD</span></div>
-<ul class="list"><li>♾️ Desbaneo para siempre</li><li>🎮 Nunca más pagas</li></ul>
-<a class="btn-discord" href="https://discord.gg/Py2YZaG8sW" target="_blank">COMPRAR EN DISCORD</a>
-</div>
-</div>
-
-<div class="ip-box">
+<div class="ip-footer">
 <div style="color:#a855f7;font-weight:800;font-size:11px;letter-spacing:2px">ASTRAL SMP - TEMPORADA 3</div>
 <div class="ip-line"><span class="ip-text" id="ip">209.133.215.154</span><button class="btn-copy" onclick="copyTxt('ip')">COPIAR IP</button></div>
 <div class="ip-line"><span class="ip-text" id="port">50063</span><button class="btn-copy" onclick="copyTxt('port')">COPIAR PUERTO</button></div>
 </div>
 
+<div class="modal" id="modal" onclick="if(event.target==this)closeModal()">
+<div class="modal-box" id="modalBox">
+<div class="modal-icon" id="mIcon">👑</div>
+<div style="font-size:22px;font-weight:900" id="mTitle">PERSONALIZADO</div>
+<div style="color:#34d399;font-size:12px" id="mSub"></div>
+<div style="font-size:28px;font-weight:900;margin:10px 0;color:#fbbf24" id="mPrice"></div>
+<div class="modal-list" id="mList"></div>
+<a class="btn btn-buy" id="mDiscord" href="https://discord.gg/Py2YZaG8sW" target="_blank" style="display:block;width:100%;margin-top:10px;padding:14px">COMPRAR EN DISCORD</a>
+<button class="btn btn-view" onclick="closeModal()" style="width:100%;margin-top:8px;padding:12px">CERRAR</button>
+</div>
+</div>
+
 <script>
-function copyTxt(id){
-var t=document.getElementById(id).innerText;
-navigator.clipboard.writeText(t);
-alert('Copiado: '+t);
+const kits=[
+{icon:'👑',name:'PERSONALIZADO',desc:'Kit único personalizado a tu elección',price:'$25',accent:'gold',stats:['Rango en el servidor','Armadura a elección','Afilado a elección','Kit único personalizado']},
+{icon:'💀',name:'ANCESTRAL',desc:'Protección 18 • Filo 18 • 20M cada 24h',price:'$14',accent:'#ef4444',stats:['Rango en el servidor','Armadura Protección 18','Afilado 18','Kit cada 1 día','20M cada 1 día']},
+{icon:'🔮',name:'MISTICO',desc:'Protección 16 • Filo 16 • 15M cada 24h',price:'$8',accent:'#a855f7',stats:['Rango en el servidor','Armadura Protección 16','Afilado 16','Kit cada 1 día','15M cada 1 día']},
+{icon:'🐍',name:'MEDUSA',desc:'Protección 14 • Filo 14 • 10M cada 24h',price:'$4',accent:'#10b981',stats:['Rango en el servidor','Armadura Protección 14','Afilado 14','Kit cada 1 día','10M cada 1 día']},
+{icon:'🚀',name:'KIT BOOSTER',desc:'Protección 13 • Filo 13 • Gratis por 2 boosts',price:'GRATIS',accent:'#ff41ff',stats:['Rango Booster en el servidor','Armadura Protección 13','Afilado 13','Kit cada 1 día','1.5M cada 1 día']},
+{icon:'🔓',name:'UNBAN 30 DIAS',desc:'Desbaneo por 30 días',price:'$2',accent:'#22c55e',stats:['Desbaneo 30 días','Vuelve a jugar']},
+{icon:'♾️',name:'UNBAN PERMANENTE',desc:'Desbaneo para siempre',price:'$6',accent:'#06b6d4',stats:['Desbaneo permanente','Nunca más pagas']},
+];
+function render(){
+document.getElementById('kits').innerHTML=kits.map((k,i)=>`
+<div class="kit-row" style="--accent:${k.accent}">
+<div class="kit-icon" style="border-color:${k.accent}">${k.icon}</div>
+<div class="kit-info"><div class="kit-name" style="color:${k.accent=='gold'?'#fbbf24':k.accent}">${k.name}</div><div class="kit-desc">${k.desc}</div></div>
+<div class="kit-price">${k.price}${k.price!='GRATIS'?' USD':''}</div>
+<div class="kit-actions">
+<button class="btn btn-view" onclick="openPreview(${i})">VER</button>
+<a class="btn btn-buy" style="background:${k.accent};${k.accent=='gold'?'color:black':''}" href="https://discord.gg/Py2YZaG8sW" target="_blank">COMPRAR</a>
+</div>
+</div>`).join('');
 }
+render();
+function copyTxt(id){var t=document.getElementById(id).innerText;navigator.clipboard.writeText(t);alert('Copiado: '+t);}
+function openPreview(i){
+const k=kits[i];
+document.getElementById('mIcon').innerText=k.icon;
+document.getElementById('mTitle').innerText=k.name;
+document.getElementById('mTitle').style.color=k.accent=='gold'?'#fbbf24':k.accent;
+document.getElementById('mSub').innerText=k.desc;
+document.getElementById('mPrice').innerText=k.price+(k.price=='GRATIS'?'':' USD');
+document.getElementById('modalBox').style.setProperty('--accent',k.accent);
+document.getElementById('mList').innerHTML=k.stats.map(s=>`<div class="modal-item">✔️ ${s}</div>`).join('');
+document.getElementById('modal').classList.add('active');
+}
+function closeModal(){document.getElementById('modal').classList.remove('active')}
 </script>
 </body>
 </html>
