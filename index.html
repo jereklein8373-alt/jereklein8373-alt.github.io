@@ -3,168 +3,179 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Astral SMP - Tienda Oficial</title>
+<title>Astral SMP - Tienda</title>
 <style>
 *{margin:0;padding:0;box-sizing:border-box}
-body{background:#0f0a1e;color:white;font-family:sans-serif;padding:15px}
-h1{text-align:center;font-size:26px;margin:15px 0 5px;font-weight:900}
-.sub{text-align:center;color:#9ca3af;font-size:13px;margin-bottom:15px}
-.warn{max-width:600px;margin:0 auto 12px;background:linear-gradient(90deg,rgba(239,68,68,0.2),rgba(249,115,22,0.2));border:1px solid #ef4444;border-radius:12px;padding:10px;text-align:center;font-size:12px;color:#fecaca}
-.notice{max-width:500px;margin:0 auto 15px;background:#1a1033;border:1px solid #a855f7;border-radius:30px;padding:10px 15px;text-align:center;font-size:13px;color:#d1c7ff}
-.ip-box{max-width:500px;margin:0 auto 20px;background:#1a1033;border:1px solid #2d1b4e;border-radius:15px;padding:12px;display:flex;flex-direction:column;gap:8px}
-.ip-row{display:flex;justify-content:space-between;align-items:center;background:#0f0a1e;padding:10px 12px;border-radius:10px;border:1px solid #2d1b4e}
-.ip-label{font-size:11px;color:#9ca3af}
-.ip-value{font-weight:900;font-family:monospace;font-size:14px;color:#5eead4}
-.btn-copy{background:#a855f7;color:white;border:none;padding:6px 12px;border-radius:8px;font-size:11px;font-weight:700;cursor:pointer}
-.tabs{max-width:400px;margin:0 auto 20px;display:flex;background:#1a1033;border-radius:30px;padding:5px;border:1px solid #2d1b4e}
-.tab-btn{flex:1;padding:12px;border-radius:25px;border:none;background:transparent;color:#9ca3af;font-weight:700;cursor:pointer}
-.tab-btn.active{background:#a855f7;color:white}
-.grid{display:none;max-width:1200px;margin:0 auto;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:15px}
+body{background:#070311;color:white;font-family:sans-serif;padding:15px}
+.header-glow{text-align:center;margin:30px 0 10px}
+.header-glow h1{font-size:42px;font-weight:900;color:#c084fc;letter-spacing:5px;text-shadow:0 0 10px #a855f7,0 0 20px #a855f7,0 0 40px #7c3aed,0 0 80px #a855f7;animation:glow 2s infinite alternate}
+@keyframes glow{0%{text-shadow:0 0 10px #a855f7,0 0 20px #a855f7}100%{text-shadow:0 0 20px #c084fc,0 0 40px #a855f7,0 0 60px #7c3aed}}
+.warn{max-width:600px;margin:15px auto;background:#1a0a0a;border:1px solid #ef4444;border-radius:10px;padding:10px;text-align:center;font-size:11px;color:#fecaca}
+.ip-box{max-width:520px;margin:15px auto;background:#120b25;border:1px solid #a855f7;border-radius:16px;padding:14px}
+.ip-row{display:flex;justify-content:space-between;align-items:center;background:#070311;padding:10px;border-radius:10px;margin-top:8px;border:1px solid #1f103d}
+.ip-val{font-family:monospace;font-weight:900;color:#a78bfa}
+.btn-copy{background:#7c3aed;border:none;color:white;padding:6px 14px;border-radius:8px;font-weight:800;font-size:11px;cursor:pointer}
+.notice{max-width:500px;margin:15px auto;background:rgba(168,85,247,0.1);border:1px dashed #a855f7;border-radius:30px;padding:8px;text-align:center;font-size:12px;color:#d8b4fe}
+.tabs{max-width:380px;margin:15px auto;display:flex;gap:10px}
+.tab-btn{flex:1;padding:12px;border-radius:12px;border:1px solid #2d1b4e;background:#120b25;color:#6b7280;font-weight:800;cursor:pointer}
+.tab-btn.active{background:linear-gradient(90deg,#7c3aed,#a855f7);color:white;border-color:#a855f7;box-shadow:0 0 15px rgba(168,85,247,0.4)}
+.grid{display:none;max-width:1200px;margin:0 auto;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:16px}
 .grid.active{display:grid}
-.card{background:linear-gradient(180deg,#1e1438,#130e26);border:1px solid #2d1b4e;border-radius:20px;overflow:hidden;position:relative}
-.img-top{height:130px;background:radial-gradient(ellipse at center,#1a1033,#0a0614);display:flex;align-items:center;justify-content:center;margin:12px;border-radius:15px}
-.icon{font-size:65px}
-.card-body{padding:15px}
-.kit-title{font-size:22px;font-weight:900;text-align:center;font-family:monospace;letter-spacing:2px}
-.kit-name{color:#5eead4;font-weight:700;font-size:14px;margin:5px 0}
-.price{font-size:30px;font-weight:900;margin:8px 0}
-.price span{font-size:12px;color:#9ca3af;font-weight:400}
-.list{margin:12px 0;border-top:1px solid #2d1b4e}
-.list-item{padding:9px 0;border-bottom:1px solid #1f1838;font-size:12px;color:#d1c7ff;display:flex;gap:8px}
-.btn-main{width:100%;padding:13px;background:#a855f7;color:white;border:none;border-radius:12px;font-weight:900;margin-top:10px;display:block;text-align:center;text-decoration:none}
+.card{background:#111022;border:2px solid #1e1840;border-radius:18px;overflow:hidden;position:relative}
+.card::after{content:'';position:absolute;inset:0;border-radius:18px;pointer-events:none;box-shadow:inset 0 0 20px rgba(168,85,247,0.15)}
+.img-area{height:120px;display:flex;align-items:center;justify-content:center;background:radial-gradient(circle at center,#1a1033,transparent);margin:10px;border-radius:12px;border:1px solid #1e1840}
+.card-title{font-size:20px;font-weight:900;text-align:center;letter-spacing:2px;margin:5px 0}
+.body{padding:12px 15px}
+.subtitle{color:#34d399;font-size:12px;font-weight:700;margin-bottom:5px}
+.price{font-size:28px;font-weight:900}
+.price small{font-size:11px;color:#6b7280}
+.list{margin-top:10px}
+.item{padding:8px 0;font-size:12px;color:#c4b5fd;border-bottom:1px solid #1a1333;display:flex;gap:7px}
+.btn{width:100%;padding:12px;background:white;color:black;border:none;border-radius:10px;font-weight:900;margin-top:12px;display:block;text-align:center;text-decoration:none}
+.btn-violet{background:linear-gradient(90deg,#7c3aed,#a855f7);color:white}
 </style>
 </head>
 <body>
 
-<h1>Elige tu próxima aventura</h1>
-<p class="sub">Tienda Oficial de Astral SMP</p>
+<div class="header-glow"><h1>ASTRAL SMP</h1><p style="color:#6b7280;font-size:11px;letter-spacing:3px;margin-top:5px">TIENDA OFICIAL</p></div>
 
-<div class="warn">⚠️ <b>ADVERTENCIA:</b> Los rangos solo se hacen con <b>jereklein</b>. No pagues a nadie más. Contacto oficial: Discord.</div>
+<div class="warn">⚠️ ADVERTENCIA: Los rangos solo se hacen con <b>jereklein</b>. No pagues a nadie más.</div>
 
 <div class="ip-box">
-<div style="text-align:center;font-size:12px;font-weight:700;color:#a855f7;margin-bottom:5px">🌐 IP OFICIAL DEL SERVIDOR</div>
-<div class="ip-row">
-<div><div class="ip-label">IP</div><div class="ip-value" id="ip">AstralSMP.aternos.me</div></div>
-<button class="btn-copy" onclick="copiar('ip')">📋 Copiar IP</button>
-</div>
-<div class="ip-row">
-<div><div class="ip-label">PUERTO</div><div class="ip-value" id="puerto">25565</div></div>
-<button class="btn-copy" onclick="copiar('puerto')">📋 Copiar Puerto</button>
-</div>
+<div style="text-align:center;color:#a855f7;font-weight:800;font-size:11px;letter-spacing:2px">🌐 CONECTATE</div>
+<div class="ip-row"><span class="ip-val" id="ip">AstralSMP.aternos.me</span><button class="btn-copy" onclick="copyTxt('ip')">COPIAR IP</button></div>
+<div class="ip-row"><span class="ip-val" id="port">25565</span><button class="btn-copy" onclick="copyTxt('port')">COPIAR PUERTO</button></div>
 </div>
 
-<div class="notice">⏳ Los rangos duran un máximo de <b>2 temporadas.</b></div>
+<div class="notice">⏳ Los rangos duran un máximo de <b>2 temporadas</b></div>
 
 <div class="tabs">
-<button class="tab-btn active" onclick="showTab('rangos',this)">👑 Rangos</button>
-<button class="tab-btn" onclick="showTab('unban',this)">⚖️ Unban</button>
+<button class="tab-btn active" onclick="showTab('rangos',this)">RANGOS</button>
+<button class="tab-btn" onclick="showTab('unban',this)">UNBANS</button>
 </div>
 
 <div id="rangos" class="grid active">
-<div class="card">
-<div class="img-top"><div class="icon" style="filter:drop-shadow(0 0 20px gold)">👑</div></div>
-<div class="card-body">
-<div class="kit-title" style="color:gold">PERSONALIZADO</div>
-<div class="kit-name">Kit Personalizado</div>
-<div class="price">$25.00 <span>USD</span></div>
+
+<div class="card" style="border-color:gold;box-shadow:0 0 25px rgba(255,215,0,0.15)">
+<div class="img-area"><span style="font-size:60px;filter:drop-shadow(0 0 20px gold)">👑</span></div>
+<div class="body">
+<div class="card-title" style="color:gold">PERSONALIZADO</div>
+<div class="subtitle">Kit Personalizado</div>
+<div class="price">$25 <small>USD</small></div>
 <div class="list">
-<div class="list-item">🏷️ Rango en el servidor</div>
-<div class="list-item">🛡️ Armor Protección ?</div>
-<div class="list-item">⚔️ Afilado ?</div>
-<div class="list-item">📦 Kit único</div>
-<div class="list-item">💰 50M</div>
-<div class="list-item">⏳ Duración: máximo 2 temporadas</div>
+<div class="item">🎁 Kit único personalizado</div>
+<div class="item">✨ Protección ?</div>
+<div class="item">⚔️ Filo ?</div>
+<div class="item">🍎 64 manzanas + 16 totems</div>
+<div class="item">⏳ Duración: máximo 2 temporadas</div>
 </div>
-<a class="btn-main" href="https://discord.gg/Py2YZaG8sW">Añadir al carrito +</a>
+<a class="btn" style="background:gold" href="https://discord.gg/Py2YZaG8sW">COMPRAR</a>
 </div>
 </div>
+
 <div class="card">
-<div class="img-top"><div class="icon" style="filter:drop-shadow(0 0 20px #ef4444)">💀</div></div>
-<div class="card-body">
-<div class="kit-title" style="color:#ef4444">ANCESTRAL</div>
-<div class="kit-name">Kit Ancestral</div>
-<div class="price">$14.00 <span>USD</span></div>
+<div class="img-area"><span style="font-size:60px;filter:drop-shadow(0 0 15px #ef4444)">💀</span></div>
+<div class="body">
+<div class="card-title" style="color:#ef4444">ANCESTRAL</div>
+<div class="subtitle">Kit Ancestral</div>
+<div class="price">$14 <small>USD</small></div>
 <div class="list">
-<div class="list-item">🏷️ Rango en el servidor</div>
-<div class="list-item">🛡️ Armor Protección 18</div>
-<div class="list-item">⚔️ Afilado 18</div>
-<div class="list-item">📦 Kit cada 1 día</div>
-<div class="list-item">💰 20M cada 1 día</div>
-<div class="list-item">⏳ Duración: máximo 2 temporadas</div>
+<div class="item">✨ Protección 18</div>
+<div class="item">⚔️ Filo 18</div>
+<div class="item">⏱️ Cada 24h</div>
+<div class="item">💰 20M cada 24h</div>
+<div class="item">⏳ Duración: máximo 2 temporadas</div>
 </div>
-<a class="btn-main" href="https://discord.gg/Py2YZaG8sW">Añadir al carrito +</a>
+<a class="btn btn-violet" href="https://discord.gg/Py2YZaG8sW">COMPRAR</a>
 </div>
 </div>
+
 <div class="card">
-<div class="img-top"><div class="icon" style="filter:drop-shadow(0 0 20px #a855f7)">🔮</div></div>
-<div class="card-body">
-<div class="kit-title" style="color:#a78bfa">MISTICO</div>
-<div class="kit-name">Kit Místico</div>
-<div class="price">$8.00 <span>USD</span></div>
+<div class="img-area"><span style="font-size:60px;filter:drop-shadow(0 0 15px #a855f7)">🔮</span></div>
+<div class="body">
+<div class="card-title" style="color:#a78bfa">MISTICO</div>
+<div class="subtitle">Kit Místico</div>
+<div class="price">$8 <small>USD</small></div>
 <div class="list">
-<div class="list-item">🏷️ Rango en el servidor</div>
-<div class="list-item">🛡️ Armor Protección 16</div>
-<div class="list-item">⚔️ Afilado 16</div>
-<div class="list-item">📦 Kit cada 1 día</div>
-<div class="list-item">💰 15M cada 1 día</div>
-<div class="list-item">⏳ Duración: máximo 2 temporadas</div>
+<div class="item">✨ Protección 16</div>
+<div class="item">⚔️ Filo 16</div>
+<div class="item">⏱️ Cada 24h</div>
+<div class="item">💰 15M cada 24h</div>
+<div class="item">⏳ Duración: máximo 2 temporadas</div>
 </div>
-<a class="btn-main" href="https://discord.gg/Py2YZaG8sW">Añadir al carrito +</a>
+<a class="btn btn-violet" href="https://discord.gg/Py2YZaG8sW">COMPRAR</a>
 </div>
 </div>
+
 <div class="card">
-<div class="img-top"><div class="icon" style="filter:drop-shadow(0 0 20px #10b981)">🐍</div></div>
-<div class="card-body">
-<div class="kit-title" style="color:#34d399">MEDUSA</div>
-<div class="kit-name">Kit Medusa</div>
-<div class="price">$4.00 <span>USD</span></div>
+<div class="img-area"><span style="font-size:60px;filter:drop-shadow(0 0 15px #10b981)">🐍</span></div>
+<div class="body">
+<div class="card-title" style="color:#34d399">MEDUSA</div>
+<div class="subtitle">Kit Medusa</div>
+<div class="price">$4 <small>USD</small></div>
 <div class="list">
-<div class="list-item">🏷️ Rango en el servidor</div>
-<div class="list-item">🛡️ Armor Protección 14</div>
-<div class="list-item">⚔️ Afilado 14</div>
-<div class="list-item">📦 Kit cada 1 día</div>
-<div class="list-item">💰 10M cada 1 día</div>
-<div class="list-item">⏳ Duración: máximo 2 temporadas</div>
+<div class="item">✨ Protección 14</div>
+<div class="item">⚔️ Filo 14</div>
+<div class="item">⏱️ Cada 24h</div>
+<div class="item">💰 10M cada 24h</div>
+<div class="item">⏳ Duración: máximo 2 temporadas</div>
 </div>
-<a class="btn-main" href="https://discord.gg/Py2YZaG8sW">Añadir al carrito +</a>
+<a class="btn btn-violet" href="https://discord.gg/Py2YZaG8sW">COMPRAR</a>
 </div>
 </div>
+
+<!-- NUEVO KIT BOOSTER -->
+<div class="card" style="border-color:#ff41ff;box-shadow:0 0 20px rgba(255,65,255,0.2)">
+<div class="img-area"><span style="font-size:60px;filter:drop-shadow(0 0 20px #ff41ff)">🚀</span></div>
+<div class="body">
+<div class="card-title" style="color:#ff41ff">BOOSTER</div>
+<div class="subtitle">🚀 KIT BOOSTER</div>
+<div class="price">GRATIS <small>POR BOOSTEAR (2)</small></div>
+<div class="list">
+<div class="item">🎁 CONTIENE</div>
+<div class="item">⏱️ Cada 24 horas 1 kit</div>
+<div class="item">✨ Protección 13</div>
+<div class="item">⚔️ Filo 13</div>
+<div class="item">💜 Beneficio por booster</div>
+</div>
+<a class="btn" style="background:#ff41ff;color:white" href="https://discord.gg/Py2YZaG8sW">BOOSTEAR</a>
+</div>
+</div>
+
 </div>
 
 <div id="unban" class="grid">
 <div class="card">
-<div class="img-top"><div class="icon" style="filter:drop-shadow(0 0 20px #22c55e)">🔓</div></div>
-<div class="card-body">
-<div class="kit-title" style="color:#22c55e">UNBAN 30 DIAS</div>
-<div class="kit-name">Unban Temporal</div>
-<div class="price">$2.00 <span>USD</span></div>
-<div class="list"><div class="list-item">✅ Desbaneo por 30 días</div><div class="list-item">🎮 Vuelve a jugar</div></div>
-<a class="btn-main" style="background:#22c55e" href="https://discord.gg/Py2YZaG8sW">Añadir al carrito +</a>
+<div class="img-area"><span style="font-size:60px;filter:drop-shadow(0 0 15px #22c55e)">🔓</span></div>
+<div class="body">
+<div class="card-title" style="color:#22c55e">UNBAN 30 DIAS</div>
+<div class="price">$2 <small>USD</small></div>
+<div class="list"><div class="item">✅ Desbaneo 30 días</div></div>
+<a class="btn" style="background:#22c55e;color:white" href="https://discord.gg/Py2YZaG8sW">COMPRAR</a>
 </div>
 </div>
 <div class="card">
-<div class="img-top"><div class="icon" style="filter:drop-shadow(0 0 20px #06b6d4)">♾️</div></div>
-<div class="card-body">
-<div class="kit-title" style="color:#06b6d4">PERMANENTE</div>
-<div class="kit-name">Unban Permanente</div>
-<div class="price">$6.00 <span>USD</span></div>
-<div class="list"><div class="list-item">♾️ Desbaneo para siempre</div><div class="list-item">🎮 Nunca más pagas</div></div>
-<a class="btn-main" style="background:#06b6d4" href="https://discord.gg/Py2YZaG8sW">Añadir al carrito +</a>
+<div class="img-area"><span style="font-size:60px;filter:drop-shadow(0 0 15px #06b6d4)">♾️</span></div>
+<div class="body">
+<div class="card-title" style="color:#06b6d4">PERMANENTE</div>
+<div class="price">$6 <small>USD</small></div>
+<div class="list"><div class="item">♾️ Desbaneo para siempre</div></div>
+<a class="btn" style="background:#06b6d4;color:white" href="https://discord.gg/Py2YZaG8sW">COMPRAR</a>
 </div>
 </div>
 </div>
 
 <script>
-function showTab(name,btn){
+function showTab(id,btn){
 document.querySelectorAll('.grid').forEach(g=>g.classList.remove('active'));
 document.querySelectorAll('.tab-btn').forEach(b=>b.classList.remove('active'));
-document.getElementById(name).classList.add('active');
+document.getElementById(id).classList.add('active');
 btn.classList.add('active');
 }
-function copiar(id){
-var txt=document.getElementById(id).innerText;
-navigator.clipboard.writeText(txt);
-alert('Copiado: '+txt);
+function copyTxt(id){
+var t=document.getElementById(id).innerText;
+navigator.clipboard.writeText(t);
+alert('Copiado: '+t);
 }
 </script>
 </body>
